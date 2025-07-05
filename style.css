@@ -1,0 +1,31 @@
+@font-face {
+    font-family: yumenikki;
+    src: url(fonts/yume_nikki_font.ttf);
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    background-image: url(images/smug_kat.jpg), url(images/yume_nikki.jpg);
+    background-position: center, center;
+    background-position-y: 60%;
+    background-size: 30%, 100%;
+    background-repeat: no-repeat, no-repeat;
+}   
+h1 {
+    margin: auto;
+    margin-top: 5%;
+    text-align: center;
+    color: rgb(90, 44, 106, 0.88);
+    font: italic small-caps 40px yumenikki;
+    width: 50vh;
+    background-color: rgb(69, 7, 74, 0.65);
+    background-blend-mode: soft-light;
+}
+p1 {
+    width: 20vh;
+    margin-left: 2vh;
+    text-align: start;
+    font: italic small-caps 20px yumenikki;
+    background-color: rgb(112, 11, 163, 0.8);
+} 
