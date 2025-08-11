@@ -1,23 +1,58 @@
 //running navbar script below
 function navbarColor() {
-    var navbarContainer = document.getElementById('navbar');
-    var navLinks = navbarContainer.getElementsByTagName("a");
+    document.querySelectorAll("nav a").forEach
+    (link => {
+        if (link.href===window.location.href){
+            link.classList.add("active");
+        }
+        else{
+            link.classList.remove("active");
+        }
+    })
+} 
 
-    //get file name
-    var currentPage = window.location.pathname.split("/").pop();
 
-    // adds active class to current page
-    for (var i = 0; i < navLinks.length; i++) {
-        var link = navLinks[i].getAttribute("href");
+//sidebar scripts 
+const navLinks=document.querySelectorAll('nav a')
+const navbar=document.getElementById('navbar')
+const media=window.matchMedia("(max-width: 750px)")
 
-        if (link === currentPage) 
-            navLinks[i].classList.add("active");
-        
-        else 
-            navLinks[i].classList.remove("active");
-        
+media.addEventListener('change', (e) => updateNavbar(e))
+
+
+
+//removes focus on sidebar for mobile without hiding visually
+function updateNavbar(e){
+    const isMobile=e.matches
+    if(isMobile){
+        navbar.setAttribute('inert', '')
+    }
+    else{
+        navbar.removeAttribute('inert', '')
     }
 }
+
+function openSidebar(e){
+        navbar.classList.add('show');
+        navbar.removeAttribute('inert', '');
+}
+
+function closeSidebar(e){
+        console.log("running3");
+        navbar.classList.remove('show');
+        navbar.setAttribute('inert', '');
+
+} 
+
+//closes sidebar for on-page nav links
+navLinks.forEach (link=>{
+    link.addEventListener('click', ()=>{
+        if (media.matches)
+            closeSidebar();
+    })
+}) 
+
+updateNavbar(media)
 
 navbarColor()
 
