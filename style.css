@@ -95,12 +95,13 @@ body{
     display: none;
 }
 @media screen and (max-width: 800px) {
-     #close_sidebar_button{
+    #close_sidebar_button{
         display: block;
     }
     #open_sidebar_button {
+        display: block;
         position: fixed;
-        display: flex;                  
+        top: 0;               
         opacity: 60%;   
     }
     #open_sidebar_button:hover{
@@ -150,10 +151,12 @@ body{
     }
 }
 
+
+
+
 #home{
     display: flex;
 }
-
 #home img{
     height: 50dvh;
     width: 100%;
@@ -163,13 +166,15 @@ body{
     background-size: cover;
 }
 #lancer_button{
-    position: absolute;
     top: 50%;
     transform: translateY(-50%);
     width: 200px;
     height: 100px;
     clip-path: circle(30%);
 }
+
+
+
 
 .projects_container{
     justify-content: center;
