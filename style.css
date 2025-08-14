@@ -73,11 +73,16 @@ body{
     display: none;
     background: none;
     border: none;
-    padding: min(1em,8%);
+    padding: min(0.9em,8%);
     margin-right: auto;
     cursor: pointer;
-    background-color: rgba(211, 211, 211, 0.10);
+    background-color: rgba(211, 211, 211, 0.30);
     clip-path: circle(35%);
+}
+#open_sidebar_button svg{
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 #close_sidebar_button{
     display: none;
@@ -101,7 +106,7 @@ body{
     #open_sidebar_button {
         display: block;
         position: fixed;
-        top: 0;               
+        top: 0;          
         opacity: 60%;   
     }
     #open_sidebar_button:hover{
