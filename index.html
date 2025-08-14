@@ -14,6 +14,8 @@
 </head>
 
 <body>
+    
+        
     <button id="open_sidebar_button" onclick="openSidebar()">
         <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#d3d3d3"><path d="M165.13-254.62q-10.68 0-17.9-7.26-7.23-7.26-7.23-18t7.23-17.86q7.22-7.13 17.9-7.13h629.74q10.68 0 17.9 7.26 7.23 7.26 7.23 18t-7.23 17.87q-7.22 7.12-17.9 7.12H165.13Zm0-200.25q-10.68 0-17.9-7.27-7.23-7.26-7.23-17.99 0-10.74 7.23-17.87 7.22-7.13 17.9-7.13h629.74q10.68 0 17.9 7.27 7.23 7.26 7.23 17.99 0 10.74-7.23 17.87-7.22 7.13-17.9 7.13H165.13Zm0-200.26q-10.68 0-17.9-7.26-7.23-7.26-7.23-18t7.23-17.87q7.22-7.12 17.9-7.12h629.74q10.68 0 17.9 7.26 7.23 7.26 7.23 18t-7.23 17.86q-7.22 7.13-17.9 7.13H165.13Z"/></svg>
     </button>
@@ -33,17 +35,106 @@
 
     <div id="overlay" onclick="closeSidebar()"> </div>
 
-    <div id="home"><h1>First html page!</h1><br><br><br><br><br><br><br></div>
+    <div class="page_content">
 
-    <div id="about"><h2>hi im about</h2><br><br><br><br><br><br><br></div>
+        <header id="home">
+            <div>
+                <h1><i>FIRST HTML PAGE!!</i></h1>
+                <img src="resources/backgrounds/polygon_landscape.jpg">
+                <button id="lancer_button" onclick=""></button>
+            </div> 
+        </header>
 
-    <div id="projects"><h3>hi im projects</h3><br><br><br><br><br><br><br></div>
+        <header id="projects">
+            <div>
+                <br>
+                <h2><i>Projects</i></h2>
+            </div> 
+        </header>
 
-    <div id="contact"><h4>hi im contact</h4><br><br><br><br><br><br><br></div>
-    
-    <p>Hello testing this paragraph (forced pushed)!</p>
-    <img src="resources/images/smug_kat.jpg" alt="smug_kat">
+        <div class="projects_container">
+            <div id="projects_box">
+                <div>
+                    <img src="resources/images/awkward_cat.png" alt="awkward_cat">
+                    <h3>Arithmetic Logic Unit</h3>
+                    <p>hello im the first paragraph here wassup</p> 
+                </div>  
+                <div>
+                    <img src="resources/images/baby_jinx.jpg" alt="baby_jinx">
+                    <h3>AM A HEADER</h3>
+                    <p>hello im on this row</p> 
+                </div> 
+                <div>
+                    <img src="resources/images/egg_jinx.jpg" alt="egg_jinx">
+                    <h3>AM A HEADER</h3>
+                    <p>hello im on this row 2</p> 
+                </div> 
+                <div>
+                    <img src="resources/images/brushing_cat.png" alt="brushing_cat">
+                    <h3>Arithmetic Logic Unit</h3>
+                    <p>hello im the first paragraph here wassup</p> 
+                </div>  
+                <div>
+                    <img src="resources/images/angry_cat.png" alt="angry_cat">
+                    <h3>AM A HEADER</h3>
+                    <p>hello im on this row</p> 
+                </div> 
+                <div>
+                    <img src="resources/images/glue_kitten.png" alt="glue_kitten">
+                    <h3>AM A HEADER</h3>
+                    <p>hello im on this row 2</p> 
+                </div> 
+                <div>
+                    <img src="resources/images/buff_cat.jpg" alt="buff_cat">
+                    <h3>Arithmetic Logic Unit</h3>
+                    <p>hello im the first paragraph here wassup</p> 
+                </div>  
+                <div>
+                    <img src="resources/images/chef_kitten.jpg" alt="chef_kitten">
+                    <h3>AM A HEADER</h3>
+                    <p>hello im on this row</p> 
+                </div> 
+                <div>
+                    <img src="resources/images/grumpy_cat.png" alt="grumpy_cat">
+                    <h3>AM A HEADER</h3>
+                    <p>hello im on this row 2</p> 
+                </div> 
+            </div>
+        </div>
 
+
+        <header id="about">
+            <div>
+                <br>
+                <h2><i>About</i></h2>  
+            </div> 
+        </header>
+
+
+        <header id="contact">
+            <div>
+                <br>
+                <h2><i>Contact</i></h2>     
+            </div> 
+        </header>
+        <div class="contact_bar">
+            <div id="contact_email">
+                <svg xmlns="http://www.w3.org/2000/svg" height="98px" viewBox="0 -960 960 960" width="98px" fill="#e3e3e3"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/>
+                </svg>
+                <p>asadzbv@gmail.com</p>    
+            </div>
+            <div id="contact_github">
+                <svg height="98" width="98"  xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="#fff"/>
+                </svg>
+                <p>chiralacid</p>    
+            </div>
+            <div id="contact_locaiton">
+                <svg xmlns="http://www.w3.org/2000/svg" height="98px" viewBox="0 -960 960 960" width="98px" fill="#e3e3e3"><path d="M480-480q33 0 56.5-23.5T560-560q0-33-23.5-56.5T480-640q-33 0-56.5 23.5T400-560q0 33 23.5 56.5T480-480Zm0 294q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z"/>
+                </svg>
+                <p>Ontario, Canada</p>    
+            </div>
+        </div>
+    </div>
 </body>
 </html>
     

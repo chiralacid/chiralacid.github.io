@@ -1,25 +1,9 @@
-//running navbar script below
-function navbarColor() {
-    document.querySelectorAll("nav a").forEach
-    (link => {
-        if (link.href===window.location.href){
-            link.classList.add("active");
-        }
-        else{
-            link.classList.remove("active");
-        }
-    })
-} 
-
-
 //sidebar scripts 
 const navLinks=document.querySelectorAll('nav a')
 const navbar=document.getElementById('navbar')
-const media=window.matchMedia("(max-width: 750px)")
+const media=window.matchMedia("(max-width: 800px)")
 
 media.addEventListener('change', (e) => updateNavbar(e))
-
-
 
 //removes focus on sidebar for mobile without hiding visually
 function updateNavbar(e){
@@ -38,7 +22,6 @@ function openSidebar(e){
 }
 
 function closeSidebar(e){
-        console.log("running3");
         navbar.classList.remove('show');
         navbar.setAttribute('inert', '');
 
@@ -53,6 +36,3 @@ navLinks.forEach (link=>{
 }) 
 
 updateNavbar(media)
-
-navbarColor()
-
