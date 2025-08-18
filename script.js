@@ -35,4 +35,45 @@ navLinks.forEach (link=>{
     })
 }) 
 
+
+/*Slideshow code*/
+
+let slideIndex = 1;
+const slideshowCount=2;//keeps track of total slideshows in index
+showSlides(slideIndex);
+
+function plusSlides(n, slideId) {
+    showSlides(slideIndex+=n, slideId);
+}
+
+function showSlides(n, slideId) {
+    let i;
+    if (slideId===undefined)
+        slideId=1;
+
+    let slides = document.getElementsByClassName("slides"+slideId);
+
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+    }
+    
+    slides[slideIndex-1].style.display = "block";      
+}
+
+//loads all slideshows to first slide in index
+function loadSlides(){
+    let temp=1;
+    for(j=0; j<=slideshowCount; j++){
+        let slides = document.getElementsByClassName("slides"+temp);
+        for (i = 1; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+        }
+        temp+=1;
+    }        
+}
+
+loadSlides()
+
 updateNavbar(media)

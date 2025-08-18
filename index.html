@@ -8,8 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
     <!--<link rel="stylesheet" href="url-to-cdn/splide.min.css">-->
-    <!--fixes flash of unstyled content on firefox-->
-    <script>let FF_FOUC_FIX</script>
     <script src="script.js" defer></script>
 </head>
 
@@ -39,8 +37,9 @@
 
         <header id="home">
             <div>
-                <h1><i>FIRST HTML PAGE!!</i></h1>
-                <img src="resources/backgrounds/polygon_landscape.jpg">
+                <audio id="lancer_splosh" src="resources/audio/Lancer_Splat_Sound_Effect_(Deltarune).mp3" 
+                    autoplay="false"></audio>
+                <img src="resources/backgrounds/summers_end-Ryan_Haight.gif">
                 <button id="lancer_button" onclick=""></button>
             </div> 
         </header>
@@ -48,65 +47,205 @@
         <header id="projects">
             <div>
                 <br>
-                <h2><i>Projects</i></h2>
+                <h1><i>Projects</i></h1>
             </div> 
         </header>
 
         <div class="projects_container">
             <div id="projects_box">
                 <div>
-                    <img src="resources/images/awkward_cat.png" alt="awkward_cat">
-                    <h3>Arithmetic Logic Unit</h3>
-                    <p>hello im the first paragraph here wassup</p> 
-                </div>  
+                    <img src="resources/images/technical_projects_images/alu_schematic.png" alt="alu_schematic">
+                    <h3>Arithmetic Logic Unit<b></b></h3>
+                    <p> The user is inputs two 8-bit binary numbers, updated with the clock during operation. 
+                        The ALU performs 1 of 8 operations based on a given decoded states from the fsm.
+
+                        <br><br>The input, signed output, student number (fsm code) is 
+                        displayed on board's sseg displays. For debugging, the actual state resulting from the 
+                        fsm is display on LEDs.
+                        
+                        <br><br><a href="">Source code</a>
+                        <br><a href="documents/COE328_LAB6_REPORT.pdf">Project report</a>
+                    </p> 
+                </div> 
+
                 <div>
-                    <img src="resources/images/baby_jinx.jpg" alt="baby_jinx">
+                    <video controls src="resources/video/BookStore_Video_Demo.mp4"></video>
+                    <h3>BookStore Application</h3>
+                    <p>An interactive book store application with GUI. It follows requirements given by the 
+                        client such as an admin menu, points program, a checkout for the customer.
+                        
+                        <br><br>I led team of 3 for this application, utilizing Github for collaboration. The 
+                        application was coded in Java and JavaFX for the GUI. The program was developed using 
+                        UML and use-case diagrams and constructing following the State Design Pattern.
+
+                        <br><br><a href="">Source code</a>
+                        <br><a href="documents/">Project report</a>
+                    </p> 
+                </div> 
+
+                <div>
+                    <div class="slideshow_container">
+                        <div class="slides1">
+                        <div class="numbertext">1 / 6</div>
+                        <img src="resources/images/technical_projects_images/c_program_graphs/q6_output.png"
+                            alt="q6_output">
+                        </div>
+
+                        <div class="slides1">
+                        <div class="numbertext">2 / 6</div>
+                        <img src="resources/images/technical_projects_images/c_program_graphs/q7_output.png"
+                            alt="q7_output">
+                        </div>
+
+                        <div class="slides1">
+                        <div class="numbertext">3 / 6</div>
+                        <img src="resources/images/technical_projects_images/c_program_graphs/q8_output.png"
+                            alt="q8_output">
+                        </div>
+
+                        <div class="slides1">
+                        <div class="numbertext">4 / 6</div>
+                        <img src="resources/images/technical_projects_images/c_program_graphs/q9_output.png"
+                            alt="q9_output">
+                        </div>
+
+                        <div class="slides1">
+                        <div class="numbertext">5 / 6</div>
+                        <img src="resources/images/technical_projects_images/c_program_graphs/q10_output.png"
+                            alt="q10_output">
+                        </div>
+                        
+                        <div class="slides1">
+                        <div class="numbertext">6 / 6</div>
+                        <img src="resources/images/technical_projects_images/c_program_graphs/q11_output.png"
+                            alt="q11_output">
+                        </div>
+
+                        <a class="prev" onclick="plusSlides(-1, 1)">❮</a>
+                        <a class="next" onclick="plusSlides(1, 1)">❯</a>
+                    </div>
+
+                    <h3>AM A HEADER</h3>
+                    <p>hello im on this row 2
+
+                        <br><br><a href="">Source code</a>
+                        <br><a href="documents/">Project report</a>
+
+                    </p> 
+                </div> 
+
+                <div>
+                    <video controls src="resources/video/AI_Battlez_Demo.mp4"></video>
+                    <h3>AI Fighting Game</h3>
+                    <p>hello im the first paragraph here wassup
+
+                        <br><br><a href="">Source code</a>
+                    </p> 
+
+                    
+                </div>  
+
+                <div>
+                    <img src="resources/images/cats/angry_cat.png" alt="angry_cat">
                     <h3>AM A HEADER</h3>
                     <p>hello im on this row</p> 
                 </div> 
+
                 <div>
-                    <img src="resources/images/egg_jinx.jpg" alt="egg_jinx">
+                    <img src="resources/images/cats/glue_kitten.png" alt="glue_kitten">
                     <h3>AM A HEADER</h3>
                     <p>hello im on this row 2</p> 
                 </div> 
                 <div>
-                    <img src="resources/images/brushing_cat.png" alt="brushing_cat">
+                    <img src="resources/images/cats/buff_cat.jpg" alt="buff_cat">
                     <h3>Arithmetic Logic Unit</h3>
                     <p>hello im the first paragraph here wassup</p> 
                 </div>  
                 <div>
-                    <img src="resources/images/angry_cat.png" alt="angry_cat">
+                    <img src="resources/images/cats/chef_kitten.jpg" alt="chef_kitten">
                     <h3>AM A HEADER</h3>
                     <p>hello im on this row</p> 
                 </div> 
                 <div>
-                    <img src="resources/images/glue_kitten.png" alt="glue_kitten">
-                    <h3>AM A HEADER</h3>
-                    <p>hello im on this row 2</p> 
-                </div> 
-                <div>
-                    <img src="resources/images/buff_cat.jpg" alt="buff_cat">
-                    <h3>Arithmetic Logic Unit</h3>
-                    <p>hello im the first paragraph here wassup</p> 
-                </div>  
-                <div>
-                    <img src="resources/images/chef_kitten.jpg" alt="chef_kitten">
-                    <h3>AM A HEADER</h3>
-                    <p>hello im on this row</p> 
-                </div> 
-                <div>
-                    <img src="resources/images/grumpy_cat.png" alt="grumpy_cat">
+                    <img src="resources/images/cats/grumpy_cat.png" alt="grumpy_cat">
                     <h3>AM A HEADER</h3>
                     <p>hello im on this row 2</p> 
                 </div> 
             </div>
         </div>
 
+        <div class="projects_container">
+            <h2>Non-Technical Projects</h2>
+            <div id="projects_box">
+                <div>
+                    <img src="resources/images/technical_projects_images/alu_schematic.png" alt="alu_schematic">
+                    <h3>Arithmetic Logic Unit<b></b></h3>
+                    <p> The user is inputs two 8-bit binary numbers, updated with the clock during operation. 
+                        The ALU performs 1 of 8 operations based on a given decoded states from the fsm.
+
+                        <br><br>The input, signed output, student number (fsm code) is 
+                        displayed on board's sseg displays. For debugging, the actual state resulting from the 
+                        fsm is display on LEDs.
+                        
+                        <br><br><a href="">Source code</a>
+                        <br><a href="documents/COE328_LAB6_REPORT.pdf">Project report</a>
+                    </p> 
+                </div> 
+
+                <div>
+                    <video controls src="resources/video/BookStore_Video_Demo.mp4"></video>
+                    <h3>BookStore Application</h3>
+                    <p>An interactive book store application with GUI. It follows requirements given by the 
+                        client such as an admin menu, points program, a checkout for the customer.
+                        
+                        <br><br>I led team of 3 for this application, utilizing Github for collaboration. The 
+                        application was coded in Java and JavaFX for the GUI. The program was developed using 
+                        UML and use-case diagrams and constructing following the State Design Pattern.
+
+                        <br><br><a href="">Source code</a>
+                        <br><a href="documents/">Project report</a>
+                    </p> 
+                </div> 
+
+                <div>
+                    <div class="slideshow_container">
+                        <div class="slides2">
+                        <div class="numbertext">1 / 3</div>
+                        <img src="resources/images/technical_projects_images/c_program_graphs/q6_output.png"
+                            alt="q6_output">
+                        </div>
+
+                        <div class="slides2">
+                        <div class="numbertext">2 / 3</div>
+                        <img src="resources/images/technical_projects_images/c_program_graphs/q7_output.png"
+                            alt="q7_output">
+                        </div>
+
+                        <div class="slides2">
+                        <div class="numbertext">3 / 3</div>
+                        <img src="resources/images/technical_projects_images/c_program_graphs/q8_output.png"
+                            alt="q8_output">
+                        </div>
+
+                        <a class="prev" onclick="plusSlides(-1, 2)">❮</a>
+                        <a class="next" onclick="plusSlides(1, 2)">❯</a>
+                    </div>
+
+                    <h3>AM A HEADER</h3>
+                    <p>hello im on this row 2
+
+                        <br><br><a href="">Source code</a>
+                        <br><a href="documents/">Project report</a>
+
+                    </p> 
+                </div> 
+        </div>
+
 
         <header id="about">
             <div>
                 <br>
-                <h2><i>About</i></h2>  
+                <h1><i>About</i></h1>  
             </div> 
         </header>
 
@@ -114,7 +253,7 @@
         <header id="contact">
             <div>
                 <br>
-                <h2><i>Contact</i></h2>     
+                <h1><i>Contact</i></h1>     
             </div> 
         </header>
         <div class="contact_bar">

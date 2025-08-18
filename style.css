@@ -50,7 +50,6 @@ body{
 #navbar ul{
     list-style-type: none;
     display: flex;
-
 }
 #navbar li{
     display: flex;
@@ -76,7 +75,7 @@ body{
     padding: min(0.9em,8%);
     margin-right: auto;
     cursor: pointer;
-    background-color: rgba(211, 211, 211, 0.30);
+    background-color: rgba(255, 255, 255, 0.3);
     clip-path: circle(35%);
 }
 #open_sidebar_button svg{
@@ -156,28 +155,24 @@ body{
     }
 }
 
-
-
-
 #home{
     display: flex;
+    justify-content: center;
 }
 #home img{
-    height: 50dvh;
-    width: 100%;
-    image: url('resources/backgrounds/polygon_landscape.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+    max-width: 100%;
+    height: clamp(200px, 60vw, 1800px);
 }
 #lancer_button{
+    position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    width: 200px;
-    height: 100px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: clamp(70px, 10vw, 200px);
+    height: clamp(70px, 10vw, 200px);
     clip-path: circle(30%);
+    background-color: rgba(85, 133, 189,1);
 }
-
 
 
 
@@ -187,9 +182,11 @@ body{
     margin: 0 auto;
     max-width: 3000px;
     padding: min(5vh,10%);
+    overflow: visible;
 }
 .projects_container h3{
     text-align: center;
+    margin-bottom: 1vh;
 }
 #projects_box{
     display: grid;
@@ -216,7 +213,15 @@ body{
 .projects_container img{
     max-width: 100%;
     height: clamp(200px, 20vw, 600px);
-    object-fit: cover;
+    object-fit:contain;
+}
+.projects_container video{
+    max-width: 100%;
+    height: clamp(200px, 20vw, 600px);
+    object-fit:contain;
+}
+.projects_container img:hover{
+    cursor: pointer;
 }
 
 .contact_bar {
@@ -254,18 +259,61 @@ body{
     }
 }
 
+
+/* Slideshow styling */
+
+.slideshow_container img{
+    max-width: 100%;
+    height: clamp(200px, 20vw, 600px);
+    object-fit:contain;
+}
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: auto;
+  padding: min(500em, 10%) min(0.5em, 2%);
+  color: white;
+  background-color: rgba(0,0,0,0.1);
+  transition: 400ms ease;
+  user-select: none;
+}
+.next {
+  right: 0;
+  border-radius: 10px 0 0 10px;
+}
+.prev {
+  left: 0;
+  border-radius: 0 10px 10px 0;
+}
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+.numbertext {
+  color: #f2f2f2;
+  font-size: clamp(0.63rem, 0.57rem + 0.23vw, 0.75rem);
+  position: absolute;
+  top: 0;
+}
+@media screen and (max-width: 600px) {
+   .numbertext{
+        position: sticky;
+        padding-bottom: 1vh;
+        padding-top: 1em;
+   }
+} 
+
+
+
 h1 {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
     font-family: yumenikki;
     font-size: clamp(3rem, 2.73rem + 1.09vw, 3.6rem);
-    color: rgba(90, 44, 106, 0.88);
     font-variant: small-caps;
-    text-align: center;
 }
 h2{
-	font-size: clamp(2.25rem, 2.05rem + 0.82vw, 2.7rem);}
+	font-size: clamp(2.2rem, 2.1rem + 0.8vw, 2.5rem);
+}
 h3{
     font-size: clamp(1.25rem, 1.14rem + 0.46vw, 1.5rem)
 }
