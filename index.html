@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
-    <!--<link rel="stylesheet" href="url-to-cdn/splide.min.css">-->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
     <script src="script.js" defer></script>
 </head>
 
@@ -37,10 +37,29 @@
 
         <header id="home">
             <div>
-                <audio id="lancer_splosh" src="resources/audio/Lancer_Splat_Sound_Effect_(Deltarune).mp3" 
-                    autoplay="false"></audio>
-                <img src="resources/backgrounds/summers_end-Ryan_Haight.gif">
-                <button id="lancer_button" onclick=""></button>
+                <audio class="buttonAudio" id="lancer_splosh" preload="none" 
+                    src="resources/audio/sound_effects/Lancer_Splat_Sound_Effect_(Deltarune).mp3"></audio> 
+                <audio class="buttonAudio" id="fnaf_ani_door" preload="none" 
+                    src="resources/audio/sound_effects/fnaf_animatronic_at_door.mp3"></audio> 
+                <audio class="buttonAudio" id="mgs_alert" preload="none" 
+                    src="resources/audio/sound_effects/Metal_Gear Solid_ Alert_!.mp3"></audio>
+
+                <audio class="buttonAudio" id="dd_tone" preload="none" 
+                    src="resources/audio/Decrepit_Dwellings_(Hidden Forest)_tone.mp3"></audio> 
+                    <audio class="buttonAudio" id="pcrp_tone" preload="none" 
+                    src="resources/audio/Pinwheel_Countryside-Rainy_Path_tone.mp3"></audio>
+                <audio class="buttonAudio" id="dexter_piano" preload="none" 
+                    src="resources/audio/Blood_Theme_tone.mp3"></audio>
+                
+                <img id="welcome_img1" src="resources/backgrounds/summers_end-Ryan_Haight.gif">
+                <img id="welcome_img2" src="resources/backgrounds/snowy_night-u_6VCR.gif">
+
+                <img id="lancer_sprite" src="resources/icons/Lancer_overworld_static.png">
+                <img id="nightmare" src="resources/icons/Nightmare_close.png">
+                <img id="snake" src="resources/icons/venom_snake_face.jpg">
+                <img id="doakes" src="resources/icons/bay_harbour_butcher.jpg">
+
+                <button id="lancer_button" onclick="play()">WELCOME!</button>
             </div> 
         </header>
 
@@ -52,34 +71,57 @@
         </header>
 
         <div class="projects_container">
+            <h2>Technical Projects</h2>
             <div id="projects_box">
                 <div>
-                    <img src="resources/images/technical_projects_images/alu_schematic.png" alt="alu_schematic">
+                    <img onclick="fullView(this)" src="resources/images/technical_projects_images/alu_schematic.png" alt="alu_schematic">
                     <h3>Arithmetic Logic Unit<b></b></h3>
-                    <p> The user is inputs two 8-bit binary numbers, updated with the clock during operation. 
+                    <p>This program was created in VHDL and implemented into an FPGA board.
+                        The user is inputs two 8-bit binary numbers, updated with the clock during operation. 
                         The ALU performs 1 of 8 operations based on a given decoded states from the fsm.
 
                         <br><br>The input, signed output, student number (fsm code) is 
                         displayed on board's sseg displays. For debugging, the actual state resulting from the 
                         fsm is display on LEDs.
                         
-                        <br><br><a href="">Source code</a>
-                        <br><a href="documents/COE328_LAB6_REPORT.pdf">Project report</a>
+                        <br><br><a href="https://github.com/chiralacid/arithmetic_logic_unit">Source code</a>
+                        <br><a href="documents/ALU_REPORT.pdf">Project report</a>
                     </p> 
                 </div> 
 
                 <div>
-                    <video controls src="resources/video/BookStore_Video_Demo.mp4"></video>
+                    <div class="slideshow_container">
+                        <div class="slides8">
+                        <div class="numbertext">1 / 3</div>
+                        <video class="autopause" controls src="resources/video/BookStore_Video_Demo.mp4"></video>
+                        </div>
+
+                        <div class="slides8">
+                        <div class="numbertext">2 / 3</div>
+                        <img onclick="fullView(this)" src="resources/images/technical_projects_images/bookstore_app/umldiagram.jpg"
+                            alt="umldiagram">
+                        </div>
+
+                        <div class="slides8">
+                        <div class="numbertext">3 / 3</div>
+                        <img onclick="fullView(this)" src="resources/images/technical_projects_images/bookstore_app/usecasediagram.png"
+                            alt="usecasediagram">
+                        </div>
+
+                        <a class="prev" onclick="plusSlides(-1, 8)">❮</a>
+                        <a class="next" onclick="plusSlides(1, 8)">❯</a>
+                    </div>
+                    
                     <h3>BookStore Application</h3>
                     <p>An interactive book store application with GUI. It follows requirements given by the 
                         client such as an admin menu, points program, a checkout for the customer.
                         
                         <br><br>I led team of 3 for this application, utilizing Github for collaboration. The 
                         application was coded in Java and JavaFX for the GUI. The program was developed using 
-                        UML and use-case diagrams and constructing following the State Design Pattern.
+                        UML/use-case diagrams and constructed following the State Design Pattern.
 
-                        <br><br><a href="">Source code</a>
-                        <br><a href="documents/">Project report</a>
+                        <br><br><a href="https://github.com/chiralacid/bookstore_app">Source code</a>
+                        <br><a href="documents/bookstore_report.pdf">Project report</a>
                     </p> 
                 </div> 
 
@@ -87,37 +129,37 @@
                     <div class="slideshow_container">
                         <div class="slides1">
                         <div class="numbertext">1 / 6</div>
-                        <img src="resources/images/technical_projects_images/c_program_graphs/q6_output.png"
+                        <img onclick="fullView(this)" src="resources/images/technical_projects_images/c_program_graphs/q6_output.png"
                             alt="q6_output">
                         </div>
 
                         <div class="slides1">
                         <div class="numbertext">2 / 6</div>
-                        <img src="resources/images/technical_projects_images/c_program_graphs/q7_output.png"
+                        <img onclick="fullView(this)" src="resources/images/technical_projects_images/c_program_graphs/q7_output.png"
                             alt="q7_output">
                         </div>
 
                         <div class="slides1">
                         <div class="numbertext">3 / 6</div>
-                        <img src="resources/images/technical_projects_images/c_program_graphs/q8_output.png"
+                        <img onclick="fullView(this)" src="resources/images/technical_projects_images/c_program_graphs/q8_output.png"
                             alt="q8_output">
                         </div>
 
                         <div class="slides1">
                         <div class="numbertext">4 / 6</div>
-                        <img src="resources/images/technical_projects_images/c_program_graphs/q9_output.png"
+                        <img onclick="fullView(this)" src="resources/images/technical_projects_images/c_program_graphs/q9_output.png"
                             alt="q9_output">
                         </div>
 
                         <div class="slides1">
                         <div class="numbertext">5 / 6</div>
-                        <img src="resources/images/technical_projects_images/c_program_graphs/q10_output.png"
+                        <img onclick="fullView(this)" src="resources/images/technical_projects_images/c_program_graphs/q10_output.png"
                             alt="q10_output">
                         </div>
                         
                         <div class="slides1">
                         <div class="numbertext">6 / 6</div>
-                        <img src="resources/images/technical_projects_images/c_program_graphs/q11_output.png"
+                        <img onclick="fullView(this)" src="resources/images/technical_projects_images/c_program_graphs/q11_output.png"
                             alt="q11_output">
                         </div>
 
@@ -125,51 +167,106 @@
                         <a class="next" onclick="plusSlides(1, 1)">❯</a>
                     </div>
 
-                    <h3>AM A HEADER</h3>
-                    <p>hello im on this row 2
+                    <h3>Data Processing Program</h3>
+                    <p>The program analyzes data for global temperature of land and oceans. It isolates the data 
+                        into categories, performs operations to identify trends, then extracted the results into 
+                        new files. 
 
-                        <br><br><a href="">Source code</a>
-                        <br><a href="documents/">Project report</a>
+                        <br><br>This program was create in C and utilized GNUPlot to create the graphs. 
+                        Each graph used a different data files provided by the program to visualize specific
+                        data collected such as Average Land Temperatues within a certain time period.
+
+                        <br><br><a href="https://github.com/chiralacid/data_processing_program">Source code</a>
+                        <br><a href="documents/DATA_PROCESSING_REPORT.pdf">Project report</a>
 
                     </p> 
                 </div> 
 
                 <div>
-                    <video controls src="resources/video/AI_Battlez_Demo.mp4"></video>
-                    <h3>AI Fighting Game</h3>
-                    <p>hello im the first paragraph here wassup
+                    <video class="autopause" controls src="resources/video/AI_Battlez_Demo.mp4"></video>
+                    <h3>USER vs AI Fighting Game</h3>
+                    <p>A text-only fighting game with 4 characters to choose from to face off against a computer. 
+                        3 options are availible for actions, Attack with chance of criticals (extra damage), Defend 
+                        with a chance of parrying (reflects damage), and Ultimate, unlocked with 3 criticals.
 
-                        <br><br><a href="">Source code</a>
+                        <br><br>The computer plays based on a risk reward weighting system. The computer
+                        may reset it's strategy if it is not working out by zeroing variables or go all out if it
+                        has nothing to lose. The computer will also adjust it's playstyle based on the characters 
+                        such as Spongebob, who has a high risk high reward playstyle.
+
+                        <br><br><a href="https://github.com/chiralacid/battlez_">Source code</a>
                     </p> 
 
                     
                 </div>  
 
                 <div>
-                    <img src="resources/images/cats/angry_cat.png" alt="angry_cat">
-                    <h3>AM A HEADER</h3>
-                    <p>hello im on this row</p> 
+                    <img onclick="fullView(this)" src="resources/images/cats/angry_cat.png" alt="angry_cat">
+                    <h3>WEBSITE</h3>
+                    <p>A website I created from scratch using HTML, CSS, and JavaScript to outline projects
+                        I have enjoyed doing. I created a Github repository to both host my website and actively 
+                        push any updates. 
+                        
+                        <br><br>Using Visual Studio Code (VSC) with the Live Server plugin, I have a live view 
+                        of the website. I used this to create adaptive website features for both mobile and 
+                        desktop. Below is a link to the website, do not click this button ->
+                        <button id="dont_click" onclick="window.location.href='https://chiralacid.github.io/'"></button>
+
+                    <br><br><a href="https://chiralacid.github.io/">Website Link</a>
+                    <br><a href="https://github.com/chiralacid/chiralacid.github.io">Source Code</a>
+                    </p> 
                 </div> 
 
                 <div>
-                    <img src="resources/images/cats/glue_kitten.png" alt="glue_kitten">
-                    <h3>AM A HEADER</h3>
-                    <p>hello im on this row 2</p> 
-                </div> 
-                <div>
-                    <img src="resources/images/cats/buff_cat.jpg" alt="buff_cat">
-                    <h3>Arithmetic Logic Unit</h3>
-                    <p>hello im the first paragraph here wassup</p> 
-                </div>  
-                <div>
-                    <img src="resources/images/cats/chef_kitten.jpg" alt="chef_kitten">
-                    <h3>AM A HEADER</h3>
-                    <p>hello im on this row</p> 
-                </div> 
-                <div>
-                    <img src="resources/images/cats/grumpy_cat.png" alt="grumpy_cat">
-                    <h3>AM A HEADER</h3>
-                    <p>hello im on this row 2</p> 
+                     <div class="slideshow_container">
+                        <div class="slides2">
+                        <div class="numbertext">1 / 4</div>
+                        <model-viewer id="bracket_model" camera-controls touch-action="pan-y" 
+                        auto-rotate rotation-per-second="0.4rad" 
+                        src="resources/3d_objects/demon_bracket.glb" 
+                        skybox-image="resources/backgrounds/cloudy_puresky_4k.jpg"
+                        alt="The_bracket_used_for_the_soccerbot" 
+                        shadow-intensity="1"></model-viewer>
+                        <button id="model_zoom_button" onclick="zoomModel(document.getElementById('bracket_model'))">
+                            click for fullscreen model</button>
+                        </div>  
+                        
+                        <div class="slides2">
+                        <div class="numbertext">2 / 4</div>
+                        <img onclick="fullView(this)" src="resources/images/technical_projects_images/soccerbot/soccerbot1.jpg" 
+                            alt="soccerbot1">
+                        </div>
+
+                        <div class="slides2">
+                        <div class="numbertext">3 / 4</div>
+                        <img onclick="fullView(this)" src="resources/images/technical_projects_images/soccerbot/soccerbot2.jpg" 
+                            alt="soccerbot2">
+                        </div>
+
+                        <div class="slides2">
+                        <div class="numbertext">4 / 4</div>
+                        <img onclick="fullView(this)" src="resources/images/technical_projects_images/soccerbot/soccerbot3.jpg" 
+                            alt="soccerbot3">
+                        </div>
+
+                        <a class="prev" onclick="plusSlides(-1, 2)">❮</a>
+                        <a class="next" onclick="plusSlides(1, 2)">❯</a>
+                    </div>
+                    
+                    <h3>SoccerBot</h3>
+                    
+                    <p>Designed a soccer bot for a competition. I assembled the bot with a given kit, wired it, and created
+                        a 3d bracket model for it (as seen in slide 1). 
+                                            
+                        <br><br>Using given source code, I made macro buttons for the bot to spin with higher speed, utilizing
+                        the back bracket to hit the ball. The bracket design on the front (golden) was designed in
+                        OnShape while the back bracket (green) was improvised for spinning hits. 
+
+                        <br><br>(note: for the model above, hold shift and drawing to change the origin)
+                        
+                       <br><br><a href="code/arduino_code_new/arduino_code_new.txt">Source Code</a>
+
+                    </p> 
                 </div> 
             </div>
         </div>
@@ -178,69 +275,243 @@
             <h2>Non-Technical Projects</h2>
             <div id="projects_box">
                 <div>
-                    <img src="resources/images/technical_projects_images/alu_schematic.png" alt="alu_schematic">
-                    <h3>Arithmetic Logic Unit<b></b></h3>
-                    <p> The user is inputs two 8-bit binary numbers, updated with the clock during operation. 
-                        The ALU performs 1 of 8 operations based on a given decoded states from the fsm.
+                    <div class="slideshow_container">
+                        <div class="slides3">
+                        <div class="numbertext">1 / 6</div>
+                        <img onclick="fullView(this)"src="resources/images/non_technical_projects_images/Graphic_Design/Roman_Main_Logo_1.png" 
+                            alt="roman1">
+                        </div>
 
-                        <br><br>The input, signed output, student number (fsm code) is 
-                        displayed on board's sseg displays. For debugging, the actual state resulting from the 
-                        fsm is display on LEDs.
-                        
-                        <br><br><a href="">Source code</a>
-                        <br><a href="documents/COE328_LAB6_REPORT.pdf">Project report</a>
-                    </p> 
-                </div> 
+                        <div class="slides3">
+                        <div class="numbertext">2 / 6</div>
+                        <img onclick="fullView(this)" src="resources/images/non_technical_projects_images/Graphic_Design/Roman_Main_Logo_1_Emblem.png" 
+                            alt="romanemblem1">
+                        </div>
 
-                <div>
-                    <video controls src="resources/video/BookStore_Video_Demo.mp4"></video>
-                    <h3>BookStore Application</h3>
-                    <p>An interactive book store application with GUI. It follows requirements given by the 
-                        client such as an admin menu, points program, a checkout for the customer.
-                        
-                        <br><br>I led team of 3 for this application, utilizing Github for collaboration. The 
-                        application was coded in Java and JavaFX for the GUI. The program was developed using 
-                        UML and use-case diagrams and constructing following the State Design Pattern.
+                        <div class="slides3">
+                        <div class="numbertext">3 / 6</div>
+                        <img onclick="fullView(this)" src="resources/images/non_technical_projects_images/Graphic_Design/Roman_Main_Logo_2.png" 
+                            alt="roman2">
+                        </div>
 
-                        <br><br><a href="">Source code</a>
-                        <br><a href="documents/">Project report</a>
+                        <div class="slides3">
+                        <div class="numbertext">4 / 6</div>
+                        <img onclick="fullView(this)" src="resources/images/non_technical_projects_images/Graphic_Design/Roman_Main_Logo_2_Emblem.png" 
+                            alt="romanemblem2">
+                        </div>
+
+                        <div class="slides3">
+                        <div class="numbertext">5 / 6</div>
+                        <img onclick="fullView(this)" src="resources/images/non_technical_projects_images/Graphic_Design/Roman_Alt_Logo_GOLD.png" 
+                            alt="romanlogos1">
+                        </div>
+
+                        <div class="slides3">
+                        <div class="numbertext">6 / 6</div>
+                        <img onclick="fullView(this)" src="resources/images/non_technical_projects_images/Graphic_Design/Roman_Alt_Logo_PURPLE.png" 
+                            alt="romanlogosalt">
+                        </div>
+
+                        <a class="prev" onclick="plusSlides(-1, 3)">❮</a>
+                        <a class="next" onclick="plusSlides(1, 3)">❯</a>
+                    </div>
+                    <h3>Company Logos<b></b></h3>
+                    <p>Sets of logos I created for a fictional space company called Roman, created in Adobe Photoshop. I created 4 
+                        different colour schemes for the company to use and a special purple design (used for special events).
                     </p> 
                 </div> 
 
                 <div>
                     <div class="slideshow_container">
-                        <div class="slides2">
-                        <div class="numbertext">1 / 3</div>
-                        <img src="resources/images/technical_projects_images/c_program_graphs/q6_output.png"
-                            alt="q6_output">
+                        <div class="slides4">
+                        <div class="numbertext">1 / 2</div>
+                        <video class="autopause" controls src="resources/video/The_Elevator.mp4" alt="The_Elevator"></video>
+                        </p> 
                         </div>
 
-                        <div class="slides2">
-                        <div class="numbertext">2 / 3</div>
-                        <img src="resources/images/technical_projects_images/c_program_graphs/q7_output.png"
-                            alt="q7_output">
+                        <div class="slides4">
+                        <div class="numbertext">2 / 2</div>
+                        <video class="autopause" controls src="resources/video/The_Elevator_Folder.mp4" alt="The_Elevator"></video>
+
                         </div>
 
-                        <div class="slides2">
-                        <div class="numbertext">3 / 3</div>
-                        <img src="resources/images/technical_projects_images/c_program_graphs/q8_output.png"
-                            alt="q8_output">
+                        <a class="prev" onclick="plusSlides(-1, 4)">❮</a>
+                        <a class="next" onclick="plusSlides(1, 4)">❯</a>
+                    </div>
+                    <h3>The Elevator</h3>
+                    <p>My favourite media project. The story is a reference to a previous mini-film I made called 
+                        The Basement (live-action). My biggest challenge was my drawing skills. I had done 4 stickman 
+                        animation projects before but never full body, I studied many artstyles beforehand to prepare. 
+                        
+                        <br><br>The second slide is a quick view into how I sorted the project. I used Adobe Animate, 
+                        Preimere Pro, and Photoshop to create content.
+                    </p> 
+                
+                </div> 
+
+                <div>
+                    <div class="slideshow_container">
+                        <div class="slides5">
+                        <div class="numbertext">1 / 5</div>
+                        <img onclick="fullView(this)" src="resources/images/non_technical_projects_images/Photography/Experimental/Light_Art_Spirals.jpg"
+                            alt="light_sprials">
                         </div>
 
-                        <a class="prev" onclick="plusSlides(-1, 2)">❮</a>
-                        <a class="next" onclick="plusSlides(1, 2)">❯</a>
+                        <div class="slides5">
+                        <div class="numbertext">2 / 5</div>
+                        <img onclick="fullView(this)" src="resources/images/non_technical_projects_images/Photography/Experimental/Light_Art_Twist.jpg"
+                            alt="light_twist">
+                        </div>
+
+                        <div class="slides5">
+                        <div class="numbertext">3 / 5</div>
+                        <img onclick="fullView(this)" src="resources/images/non_technical_projects_images/Photography/Experimental/Low_Key_Piano.jpg"
+                            alt="lowkey_piano">
+                        </div>
+
+                        <div class="slides5">
+                        <div class="numbertext">4 / 5</div>
+                        <img onclick="fullView(this)" src="resources/images/non_technical_projects_images/Photography/Experimental/Studio_Experimentation_Pillow.jpg"
+                            alt="experimental_pillow">
+                        </div>
+
+                        <div class="slides5">
+                        <div class="numbertext">5 / 5</div>
+                        <img onclick="fullView(this)" src="resources/images/non_technical_projects_images/Photography/Experimental/Blur_Paved_Downwards.jpg"
+                            alt="downwards_pavement">
+                        </div>
+
+                        <a class="prev" onclick="plusSlides(-1, 5)">❮</a>
+                        <a class="next" onclick="plusSlides(1, 5)">❯</a>
                     </div>
 
-                    <h3>AM A HEADER</h3>
-                    <p>hello im on this row 2
-
-                        <br><br><a href="">Source code</a>
-                        <br><a href="documents/">Project report</a>
-
+                    <h3>Experimental Photography</h3>
+                    <p>Some experimental photos I took using a Fujifilm X-T200. I ripped the photos out of different albums to give a 
+                        taste of the types of photos I took. 
+                        
+                        <br><br>No photo manipulation was done, the only editing done was with Adobe Lightroom. The light spiral photos 
+                        were taken with an led candle and very long exposure, looking closely you may be able to see my phantom.
                     </p> 
                 </div> 
+
+                <div>
+                    <div class="slideshow_container">
+                        <div class="slides6">
+                        <div class="numbertext">1 / 3</div>
+                        <img onclick="fullView(this)" src="resources/images/non_technical_projects_images/Graphic_Design/Jotaro_Kujo_Business_Card_3_HQ.png"
+                            alt="jotaro3">
+                        </div>
+
+                        <div class="slides6">
+                        <div class="numbertext">2 / 3</div>
+                        <img onclick="fullView(this)" src="resources/images/non_technical_projects_images/Graphic_Design/Jotaro_Kujo_Business_Card_2_HQ.png"
+                            alt="jotaro2">
+                        </div>
+
+                        <div class="slides6">
+                        <div class="numbertext">3 / 3</div>
+                        <img onclick="fullView(this)" src="resources/images/non_technical_projects_images/Graphic_Design/Jotaro_Kujo_Business_Card_1_HQ.png"
+                            alt="jotaro1">
+                        </div>
+
+                        <a class="prev" onclick="plusSlides(-1, 6)">❮</a>
+                        <a class="next" onclick="plusSlides(1, 6)">❯</a>
+                    </div>
+                    <h3>Business Cards</h3>
+                    <p>Business cards for a character named Jotaro Kujo, created in Adobe Photoshop. I came up with 3 different designs. 
+                        My personal favorite is the slide 1 design as it shows a badge Jotaro wears as opposed to himself, making it easier 
+                        to associated him with something.
+
+                        <br><br>Each card is representative of Jotaro Kujo's attire or personality. I added some mini easter eggs
+                        into the designs such as the "oceanman.com", referring Ocean Man by Ween, commonly associated to him. 
+                    </p> 
+                </div> 
+
+                <div>
+                    <video class="autopause" controls src="resources/video/Demonstration_of_King_Crimsons_Ability.mp4" alt="kingu_crimusouno"></video>
+                    <h3>King Crimsons Ability</h3>
+                    <p>My very first full animation. The story is based on Diavolo from Jojo's Bizarre Adventure and his ability King Crimson. 
+                        I had no prior knowledge in animation techniques so I prepared by watching a lot of videos on techniques to use.
+                        It was creating using Adobe Animate and Premiere Pro.
+                    </p> 
+                </div>
+
+                <div>
+                    <div class="slideshow_container">
+                        <div class="slides7">
+                        <div class="numbertext">1 / 5</div>
+                        <img onclick="fullView(this)" src="resources/images/non_technical_projects_images/Photography/Astro/Saturn.jpg"
+                            alt="saturn">
+                            <div class="text">Saturn | Unknown Date | Fujifilm X-T200</div>
+                        </div>
+
+                        <div class="slides7">
+                        <div class="numbertext">2 / 5</div>
+                        <img onclick="fullView(this)" src="resources/images/non_technical_projects_images/Photography/Astro/Blood_Moon_2024-09-11.jpg"
+                            alt="blood_moon">
+                            <div class="text">*Blood Moon | 2024-09-11 | Samsung S20</div>
+                        </div>
+
+                        <div class="slides7">
+                        <div class="numbertext">3 / 5</div>
+                        <img onclick="fullView(this)" src="resources/images/non_technical_projects_images/Photography/Astro/Blue_Supermoon_2023-08-30.jpg"
+                            alt="blue_supermoon">
+                            <div class="text">Blue Supermoon Event | 2023-08-30 | Samsung S20</div>
+                        </div>
+
+                        <div class="slides7">
+                        <div class="numbertext">4 / 5</div>
+                        <img onclick="fullView(this)" src="resources/images/non_technical_projects_images/Photography/Astro/Moon_2025-08-09.jpg"
+                            alt="moon_2025_08_09">
+                            <div class="text">Moon | 2025-08-09 | Samsung S20</div>
+                        </div>
+
+                        <div class="slides7">
+                        <div class="numbertext">5 / 5</div>
+                        <img onclick="fullView(this)" src="resources/images/non_technical_projects_images/Photography/Astro/Moon_2023-02-27.jpg"
+                            alt="moon_2023_02_27">
+                            <div class="text">Moon | 2023-02-27 | Samsung S20</div>
+                        </div>
+
+                        <a class="prev" onclick="plusSlides(-1, 7)">❮</a>
+                        <a class="next" onclick="plusSlides(1, 7)">❯</a>
+                    </div>
+
+                    <h3>Astro photography</h3>
+                    <p>Some photos I took of celestial objects over the years. All photos taken through a Celestron 80AZ Telescope
+                        using 20mm lenses for the moon and a 10mm lense for Saturn. All the photos were taken by hand without tripods.
+
+                        <br><br>*The Blood Moon photo is not a true Blood Moon resulting from a lunar eclipse but the photo colour itself
+                        is completely unedited.
+                    </p> 
+                </div> 
+                
+        </div>
+        
+        <div id="full_view_image">
+            <div id="full_view_background"> 
+                <p>Background Colour</p>
+                <div id="full_view_background_options">
+                    <button id="full_view_background_black" 
+                        onclick="changeFullViewBackground('rgba(0, 0, 0, 0.7)')"></button>
+                    <button id="full_view_background_gray" 
+                        onclick="changeFullViewBackground('rgba(118, 118, 118, 0.7)')"></button>
+                    <button id="full_view_background_white" 
+                        onclick="changeFullViewBackground('rgba(255, 255, 255, 0.7)')"></button>
+                </div>
+                    
+            </div>
+            <img id="full_image">
+            <span id="close_button" onclick="closeFullView()">&times;</span>
         </div>
 
+        <div id="full_view_model">
+            <model-viewer id="full_model" camera-controls touch-action="pan-y" 
+                            auto-rotate rotation-per-second="0.4rad" 
+                            skybox-image="resources/backgrounds/cloudy_puresky_4k.jpg"
+                            shadow-intensity="1"></model-viewer>
+            <span id="close_button" onclick="closeFullViewModel()">&times;</span>
+        </div>
 
         <header id="about">
             <div>
