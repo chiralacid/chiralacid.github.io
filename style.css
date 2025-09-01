@@ -75,7 +75,7 @@ body{
     padding: min(0.9em,8%);
     margin-right: auto;
     cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.3) !important;
     clip-path: circle(35%);
 }
 #open_sidebar_button svg{
@@ -164,6 +164,7 @@ body{
     height: clamp(200px, 60vw, 1800px);
 }
 #welcome_img2{
+    margin-top: 2vh;
     max-width: 100%;
     height: minmax(500px, 100vw);
     display: none;
@@ -481,15 +482,15 @@ body{
     cursor: pointer;
 }
 #full_view_background_black{
-    background-color: black;
+    background-color: black !important;
     border: 1px solid rgb(145, 0, 0);
 }
 #full_view_background_white{
-    background-color: white;
+    background-color: white !important;
     border: 1px solid rgb(145, 0, 0);
 }
 #full_view_background_gray{
-    background-color: rgb(130, 130, 130);
+    background-color: rgb(130, 130, 130) !important;
     border: 1px solid rgb(145, 0, 0);
 }
 
