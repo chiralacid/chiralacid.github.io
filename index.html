@@ -7,7 +7,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
-    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
     <script src="script.js" defer></script>
 </head>
 
@@ -84,8 +85,10 @@
                         displayed on board's sseg displays. For debugging, the actual state resulting from the 
                         fsm is display on LEDs.
                         
-                        <br><br><a href="https://github.com/chiralacid/arithmetic_logic_unit">Source code</a>
-                        <br><a href="documents/ALU_REPORT.pdf">Project report</a>
+                        <br><br><a target="_blank" rel="noopener noreferrer" 
+                            href="https://github.com/chiralacid/arithmetic_logic_unit">Source code</a>
+                        <br><a target="_blank" rel="noopener noreferrer"
+                            href="documents/ALU_REPORT.pdf">Project report</a>
                     </p> 
                 </div> 
 
@@ -113,15 +116,17 @@
                     </div>
                     
                     <h3>BookStore Application</h3>
-                    <p>An interactive book store application with GUI. It follows requirements given by the 
-                        client such as an admin menu, points program, a checkout for the customer.
-                        
-                        <br><br>I led team of 3 for this application, utilizing Github for collaboration. The 
+                    <p>I led team of 3 for this application, utilizing Github for collaboration. The 
                         application was coded in Java and JavaFX for the GUI. The program was developed using 
                         UML/use-case diagrams and constructed following the State Design Pattern.
+                        
+                        <br><br>An interactive book store application with GUI. It follows requirements given by the 
+                        client such as an admin menu, points program, a checkout for the customer.
 
-                        <br><br><a href="https://github.com/chiralacid/bookstore_app">Source code</a>
-                        <br><a href="documents/bookstore_report.pdf">Project report</a>
+                        <br><br><a target="_blank" rel="noopener noreferrer"
+                            href="https://github.com/chiralacid/bookstore_app">Source code</a>
+                        <br><a target="_blank" rel="noopener noreferrer"
+                            href="documents/bookstore_report.pdf">Project report</a>
                     </p> 
                 </div> 
 
@@ -168,16 +173,18 @@
                     </div>
 
                     <h3>Data Processing Program</h3>
-                    <p>The program analyzes data for global temperature of land and oceans. It isolates the data 
+                    <p>This program was create in C and utilized GNUPlot to create the graphs. 
+                        Each graph used a different data files provided by the program to visualize specific
+                        data collected such as Average Land Temperatures within a certain time period.
+                        
+                        <br><br>The program analyzes data for global temperature of land and oceans. It isolates the data 
                         into categories, performs operations to identify trends, then extracted the results into 
                         new files. 
 
-                        <br><br>This program was create in C and utilized GNUPlot to create the graphs. 
-                        Each graph used a different data files provided by the program to visualize specific
-                        data collected such as Average Land Temperatues within a certain time period.
-
-                        <br><br><a href="https://github.com/chiralacid/data_processing_program">Source code</a>
-                        <br><a href="documents/DATA_PROCESSING_REPORT.pdf">Project report</a>
+                        <br><br><a target="_blank" rel="noopener noreferrer"
+                            href="https://github.com/chiralacid/data_processing_program">Source code</a>
+                        <br><a target="_blank" rel="noopener noreferrer"
+                            href="documents/DATA_PROCESSING_REPORT.pdf">Project report</a>
 
                     </p> 
                 </div> 
@@ -185,8 +192,8 @@
                 <div>
                     <video class="autopause" controls src="resources/video/AI_Battlez_Demo.mp4"></video>
                     <h3>USER vs AI Fighting Game</h3>
-                    <p>A text-only fighting game with 4 characters to choose from to face off against a computer. 
-                        3 options are availible for actions, Attack with chance of criticals (extra damage), Defend 
+                    <p>A text-only fighting game made in Java. 4 characters can be chosen to face off against a computer. 
+                        3 options are available for actions, Attack with chance of a critical (extra damage), Defend 
                         with a chance of parrying (reflects damage), and Ultimate, unlocked with 3 criticals.
 
                         <br><br>The computer plays based on a risk reward weighting system. The computer
@@ -194,26 +201,28 @@
                         has nothing to lose. The computer will also adjust it's playstyle based on the characters 
                         such as Spongebob, who has a high risk high reward playstyle.
 
-                        <br><br><a href="https://github.com/chiralacid/battlez_">Source code</a>
+                        <br><br><a target="_blank" rel="noopener noreferrer" href="https://github.com/chiralacid/battlez_">Source code</a>
                     </p> 
 
                     
                 </div>  
 
                 <div>
-                    <img onclick="fullView(this)" src="resources/images/cats/angry_cat.png" alt="angry_cat">
+                    <img onclick="fullView(this)" src="resources/images/website_first_image.png" alt="cat">
                     <h3>WEBSITE</h3>
                     <p>A website I created from scratch using HTML, CSS, and JavaScript to outline projects
-                        I have enjoyed doing. I created a Github repository to both host my website and actively 
-                        push any updates. 
+                        I have enjoyed doing. I created a Github repository to both host my website and push any updates.
+                        The photo above is how the website initially looked (August 4th, 2025). You can see all the commits
+                        I have done since then through the Github repository.
                         
                         <br><br>Using Visual Studio Code (VSC) with the Live Server plugin, I have a live view 
                         of the website. I used this to create adaptive website features for both mobile and 
-                        desktop. Below is a link to the website, do not click this button ->
-                        <button id="dont_click" onclick="window.location.href='https://chiralacid.github.io/'"></button>
+                        desktop. <br>Click the button ->
+                        <button id="click" onclick="changePageBackground()"></button>
 
                     <br><br><a href="https://chiralacid.github.io/">Website Link</a>
-                    <br><a href="https://github.com/chiralacid/chiralacid.github.io">Source Code</a>
+                    <br><a target="_blank" rel="noopener noreferrer" href="https://github.com/chiralacid/chiralacid.github.io">Source Code</a>
+                    <br><a id="cat_button" target="_blank" rel="noopener noreferrer" href="#" onclick="randomCat()">Random Cat Link</a>
                     </p> 
                 </div> 
 
@@ -255,16 +264,16 @@
                     
                     <h3>SoccerBot</h3>
                     
-                    <p>Designed a soccer bot for a competition. I assembled the bot with a given kit, wired it, and created
-                        a 3d bracket model for it (as seen in slide 1). 
+                    <p>Developed a soccer bot for a competition. I assembled the bot with a kit, wired it, and created
+                        a bracket model for it (as seen in slide 1). 
                                             
-                        <br><br>Using given source code, I made macro buttons for the bot to spin with higher speed, utilizing
-                        the back bracket to hit the ball. The bracket design on the front (golden) was designed in
-                        OnShape while the back bracket (green) was improvised for spinning hits. 
+                        <br><br>Using pre-existing source code, I made macro buttons for the bot to spin faster, utilizing
+                        the back to hit the ball. The bracket design on the front (golden) was designed in
+                        OnShape while the back bracket (green) was improvised to due printing issues. 
 
-                        <br><br>(note: for the model above, hold shift and drawing to change the origin)
+                        <br><br>(note: hold shift+drag to change the model origin)
                         
-                       <br><br><a href="code/arduino_code_new/arduino_code_new.txt">Source Code</a>
+                       <br><br><a target="_blank" rel="noopener noreferrer" href="resources/code/arduino_code_new/arduino_code_new.txt">Source Code</a>
 
                     </p> 
                 </div> 
@@ -317,7 +326,7 @@
                     </div>
                     <h3>Company Logos<b></b></h3>
                     <p>Sets of logos I created for a fictional space company called Roman, created in Adobe Photoshop. I created 4 
-                        different colour schemes for the company to use and a special purple design (used for special events).
+                        different color schemes for the company to use and a special purple design (used for special events).
                     </p> 
                 </div> 
 
@@ -339,12 +348,12 @@
                         <a class="next" onclick="plusSlides(1, 4)">❯</a>
                     </div>
                     <h3>The Elevator</h3>
-                    <p>My favourite media project. The story is a reference to a previous mini-film I made called 
+                    <p>My favorite media project. The story is a reference to a previous mini-film I made called 
                         The Basement (live-action). My biggest challenge was my drawing skills. I had done 4 stickman 
-                        animation projects before but never full body, I studied many artstyles beforehand to prepare. 
+                        animation projects before but never full body, I studied many art-styles beforehand to prepare. 
                         
                         <br><br>The second slide is a quick view into how I sorted the project. I used Adobe Animate, 
-                        Preimere Pro, and Photoshop to create content.
+                        Premiere Pro, and Photoshop (backgrounds) to everything for the animation.
                     </p> 
                 
                 </div> 
@@ -430,9 +439,8 @@
                 <div>
                     <video class="autopause" controls src="resources/video/Demonstration_of_King_Crimsons_Ability.mp4" alt="kingu_crimusouno"></video>
                     <h3>King Crimsons Ability</h3>
-                    <p>My very first full animation. The story is based on Diavolo from Jojo's Bizarre Adventure and his ability King Crimson. 
-                        I had no prior knowledge in animation techniques so I prepared by watching a lot of videos on techniques to use.
-                        It was creating using Adobe Animate and Premiere Pro.
+                    <p>My very first full animation created using Adobe Animate and Premiere Pro. The story is based on Diavolo from Jojo's Bizarre Adventure and his ability King Crimson. 
+                        <br><br>I had no prior knowledge in animation techniques so I prepared by watching a lot of videos on techniques to use.
                     </p> 
                 </div>
 
@@ -481,7 +489,7 @@
                     <p>Some photos I took of celestial objects over the years. All photos taken through a Celestron 80AZ Telescope
                         using 20mm lenses for the moon and a 10mm lense for Saturn. All the photos were taken by hand without tripods.
 
-                        <br><br>*The Blood Moon photo is not a true Blood Moon resulting from a lunar eclipse but the photo colour itself
+                        <br><br>*The Blood Moon photo is not a true Blood Moon resulting from a lunar eclipse but the photo color itself
                         is completely unedited.
                     </p> 
                 </div> 
@@ -490,7 +498,7 @@
         
         <div id="full_view_image">
             <div id="full_view_background"> 
-                <p>Background Colour</p>
+                <p>Background Color</p>
                 <div id="full_view_background_options">
                     <button id="full_view_background_black" 
                         onclick="changeFullViewBackground('rgba(0, 0, 0, 0.7)')"></button>
@@ -515,8 +523,22 @@
 
         <header id="about">
             <div>
-                <br>
-                <h1><i>About</i></h1>  
+            <br>
+            <h1><i>About</i></h1>
+            <div class="about_container">
+                <div class="about_content_bar">
+                <div class="about_content">Hello, my name is Asad. I'm a third year Computer Engineering 
+                student at Toronto Metropolitan University (formerly Ryerson). I'm a resourceful and
+                determined learner, I enjoy different challenges that help me grow my skills. This has help
+                me developed a wide variety of interests from technical stuff like programming to 
+                live-action media projects. I created this website to challenge myself with something new 
+                but also showcase projects I've enjoyed.
+                <br><br>
+                If you wish to see my live-action projects that I am unable to share here, please contact me 
+                with the email below. Thank you for visiting my website!
+                </div>
+                </div>
+            </div>
             </div> 
         </header>
 
@@ -529,16 +551,21 @@
         </header>
         <div class="contact_bar">
             <div id="contact_email">
-                <svg xmlns="http://www.w3.org/2000/svg" height="98px" viewBox="0 -960 960 960" width="98px" fill="#e3e3e3"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/>
-                </svg>
-                <p>asadzbv@gmail.com</p>    
+                <a a href="mailto:asadzbv@gmail.com">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="98px" viewBox="0 -960 960 960" width="98px" fill="#e3e3e3"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/>
+                    </svg>
+                    <p>asadzbv@gmail.com</p>  
+                </a>
+                  
             </div>
             <div id="contact_github">
+                <a target="_blank" rel="noopener noreferrer" href="https://github.com/chiralacid">
                 <svg height="98" width="98"  xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="#fff"/>
                 </svg>
                 <p>chiralacid</p>    
+                </a>
             </div>
-            <div id="contact_locaiton">
+            <div id="contact_location">
                 <svg xmlns="http://www.w3.org/2000/svg" height="98px" viewBox="0 -960 960 960" width="98px" fill="#e3e3e3"><path d="M480-480q33 0 56.5-23.5T560-560q0-33-23.5-56.5T480-640q-33 0-56.5 23.5T400-560q0 33 23.5 56.5T480-480Zm0 294q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z"/>
                 </svg>
                 <p>Ontario, Canada</p>    

@@ -290,13 +290,16 @@ function closeFullViewModel(){
     document.getElementById("full_view_model").style.display="none";
 }
 
+
+//change background color on full view scripts
+
 function changeFullViewBackground(color){
     document.getElementById("full_view_image").style.backgroundColor=color;
 
     document.documentElement.style.setProperty('--close_button_color_full_img_view', invert(color));
-    document.documentElement.style.setProperty('--close_button_color_hover_focus_full_img_view', alterColor(invert(color)));
+    document.documentElement.style.setProperty
+        ('--close_button_color_hover_focus_full_img_view', alterColor(invert(color)));
 }
-
 function alterColor(rgb) {
     
     let rgbArr = rgb.replace(/rgba?\(|\)|\s/gi, '').split(',');
@@ -351,11 +354,86 @@ function invert(rgb) {
             rgb[2]=255;
         }
     }
-    rgb[3]=alpha;//preserves opacity (submit rgb[3] back if required)
-    return `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
+    rgb[3]=alpha;//preserves opacity
+    return `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]}, ${rgb[3]})`;
 }
 
-    
+//special button scripts
+
+let pickBg=0;
+
+function changePageBackground(){
+    if (pickBg==0)
+    {
+        document.body.style.backgroundImage="url('resources/backgrounds/yume_nikki.png')";
+ 
+
+        allElements = document.querySelectorAll('*');
+        allElements.forEach(element => {
+        element.style.fontFamily = 'yumenikki'; 
+        });
+        pickBg=1;
+    }
+    else
+    {
+        document.body.style.backgroundImage="url('resources/backgrounds/grey_hexagons_on_black_background.jpg')";
+
+        allElements = document.querySelectorAll('*');
+        allElements.forEach(element => {
+        element.style.fontFamily = 'Ubuntu Mono'; 
+        });
+        pickBg=0;
+    }
+}
+
+
+//random cat scripts
+function randomCat(){
+    let random = Math.floor(Math.random() * (Math.floor(13) - Math.ceil(1)) + Math.ceil(1));
+
+    switch(random)
+    {
+        case 1:
+            return document.getElementById('cat_button').setAttribute('href',"resources/images/cats/angry_cat.png");
+        
+        case 2:
+            return document.getElementById('cat_button').setAttribute('href',"resources/images/cats/awkward_cat.png");
+
+        case 3:
+            return document.getElementById('cat_button').setAttribute('href',"resources/images/cats/baby_jinx.jpg");
+
+        case 4:
+            return document.getElementById('cat_button').setAttribute('href',"resources/images/cats/brushing_cat.png");
+        
+        case 5:
+            return document.getElementById('cat_button').setAttribute('href',"resources/images/cats/buff_cat.jpg");
+
+        case 6:
+            return document.getElementById('cat_button').setAttribute('href',"resources/images/cats/chef_kitten.jpg");
+
+        case 7:
+            return document.getElementById('cat_button').setAttribute('href',"resources/images/cats/cute_little_white_kitten.png");
+        
+        case 8:
+            return document.getElementById('cat_button').setAttribute('href',"resources/images/cats/egg_jinx.jpg");
+
+        case 9:
+            return document.getElementById('cat_button').setAttribute('href',"resources/images/cats/fat_box_cat.jpg");
+
+        case 10:
+            return document.getElementById('cat_button').setAttribute('href',"resources/images/cats/fat_cat.png");
+        
+        case 11:
+            return document.getElementById('cat_button').setAttribute('href',"resources/images/cats/glue_kitten.png");
+
+        case 12:
+            return document.getElementById('cat_button').setAttribute('href',"resources/images/cats/grumpy_cat.png");
+        
+        case 13:
+            return document.getElementById('cat_button').setAttribute('href',"resources/images/cats/smug_cat.jpg");
+    }
+}
+
 
 loadButtonAudio()
 

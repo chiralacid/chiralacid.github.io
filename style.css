@@ -4,27 +4,66 @@
     src: url(fonts/yume_nikki_font.ttf);
 }
 
-h1, h2, h3, h4, h5, h6,p{
-    color: white;
+h1, h2, h3, h4, h5, h6{
+    color: rgb(var(--primary-color));
+}
+p,.text, .about_content{
+    color: rgb(var(--secondary-color));
+}
+h1 {
+    font-size: clamp(3rem, 2.73rem + 1.09vw, 3.6rem);
+    font-variant: small-caps;
+    font-weight: 600;
+}
+h2{
+	font-size: clamp(2.2rem, 2.1rem + 0.8vw, 2.5rem);
+    font-weight: 100;
+    font-variant: small-caps;
+}
+h3, .about_content{
+    font-size: clamp(1.25rem, 1.14rem + 0.46vw, 1.5rem);
+    font-variant: small-caps;
+}
+h4{
+    font-size: clamp(1.5rem, 1.36rem + 0.55vw, 1.8rem);
+}
+p {
+    font-size: clamp(0.75rem, 1rem + 0.2vw, 1.2rem);
+} 
+.text{
+    font-size: clamp(0.83rem, 0.76rem + 0.33vw, 1rem);
+}
+a{
+    color: rgb(var(--link-color));
 }
 
+
 *{
+    --primary-color: 255, 255, 255;
+    --secondary-color: 233, 233, 233;
+    --backplate-color: 38, 42, 44;
+    --block-color: 64, 56, 56;
+    --link-color: 109, 95, 155;
+    --outline-color: 29, 25, 25;
+    --outline-color-alt: 94, 89, 120;
+    --hover-color: 112, 3, 255;
+
     margin: 0;
     padding: 0;
     position: relative;
     scroll-behavior: smooth;
     scroll-padding-top: 7vh;
     box-sizing: border-box;
+    font-family: 'Ubuntu Mono', monospace;
 }
 
 body{
     min-height: 100vh;
     min-height: 100dvh;
-    background-image: url('resources/backgrounds/yume_nikki.png');
+    background-image: url('resources/backgrounds/grey_hexagons_on_black_background.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    font-family: 'yumenikki';
     scrollbar-width: thin;
 }
 
@@ -44,7 +83,7 @@ body{
     position: sticky;
     top: 0;
     overflow: auto;
-    background-color: rgba(62, 3, 165, 0.3);
+    background-color: rgba(var(--link-color), 0.3);
     backdrop-filter: blur(5px);
 }
 #navbar ul{
@@ -65,7 +104,7 @@ body{
     transition: background-color 400ms ease;
 }
 #navbar a:hover{
-  background-color: rgba(112, 3, 255, 0.3);
+  background-color: rgba(var(--hover-color), 0.3);
 }
 #open_sidebar_button{
     z-index: 8;
@@ -75,7 +114,7 @@ body{
     padding: min(0.9em,8%);
     margin-right: auto;
     cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.3) !important;
+    background-color: rgba(141, 141, 141, 0.3);
     clip-path: circle(35%);
 }
 #open_sidebar_button svg{
@@ -105,14 +144,14 @@ body{
     #open_sidebar_button {
         display: block;
         position: fixed;
-        top: 0;          
+        top: 2%;          
         opacity: 60%;   
     }
     #open_sidebar_button:hover{
         opacity: 100%;
     }
     #navbar button{
-        padding-bottom: 15vh;
+        padding-bottom: 25vh;
     }
     #navbar.show{
         left: 0;
@@ -161,7 +200,7 @@ body{
 }
 #welcome_img1{
     max-width: 100%;
-    height: clamp(200px, 60vw, 1800px);
+    height: clamp(200px, 55vw, 1700px);
 }
 #welcome_img2{
     margin-top: 2vh;
@@ -170,8 +209,8 @@ body{
     display: none;
 }
 #lancer_button{
-    font-family: yumenikki;
     font-variant: small-caps;
+    font-weight: 700;
     font-size: clamp(0.5rem, 0.2782rem + 1.4194vw, 1.875rem);
     position: absolute;
     top: 50%;
@@ -266,7 +305,9 @@ body{
     display: grid;
     grid-template-columns: repeat(1, minmax(200px,1fr));
     gap: 10px;
-    background-color: red;  
+    padding: 20px;
+    background-color: rgba(var(--backplate-color), 0.3);
+    backdrop-filter: blur(5px);
     overflow: hidden;
     align-content: center;
     justify-content: center;
@@ -280,7 +321,8 @@ body{
 #projects_box>div{
     text-align: center;
     padding: clamp(0.5em, 2vw, 1.5em);
-    border: 3px solid pink; 
+    border: 3.5px solid rgb(var(--outline-color)); 
+    background-color: rgb(var(--block-color));
 }
 .projects_container p{
     text-align: left;
@@ -302,7 +344,6 @@ body{
 }
 .projects_container model-viewer{
     margin: 0 auto;
-    background-color: rgba(0, 0, 0, 0.209);
     max-width: 100%;
     width: clamp(200px, 27vw, 600px);
     height: clamp(200px, 20vw, 600px);
@@ -314,28 +355,41 @@ body{
     margin-bottom: 1vh;
     margin-top: 1vh;
     background-color: black;
-    border: 1px solid gray;
+    border: 1.5px solid rgb(var(--outline-color-alt));
     cursor: pointer;
     color: white;
     overflow: auto;
-    font-family: 'yumenikki';
 }
-#dont_click {
+#click {
     width: clamp(0.83rem, 0.99rem + 0.6vw, 2rem);
     height: clamp(0.90rem, 0.99rem + 0.6vw, 2rem);
     background-color: black;
-    border: 1px solid gray;
+    border: 1.5px solid rgb(var(--outline-color-alt));
     cursor: pointer;
 }
 
+.about_container {
+    background-color: rgb(var(--backplate-color), 0.3);
+    backdrop-filter: blur(5px);
+    padding: 1em;
+}
+.about_container>div{
+    max-width: 100%;
+    padding: 1em;
+    background-color: rgb(var(--block-color));
+    border: 4px solid rgb(var(--outline-color));
+}
+.about_content{
+    padding-left: 2vw;
+}
 
 .contact_bar {
     display: flex; 
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    background-color: rgba(94, 1, 187, 0.33);
-    backdrop-filter: blur(10px);
+    background-color: rgb(var(--backplate-color), 0.3);
+    backdrop-filter: blur(5px);
     gap: 10px;
     padding: 1em;
     text-align: center;
@@ -345,12 +399,15 @@ body{
     flex: 1 1 250px;
     max-width: 800px;
     padding: 1em;
-    background-color: red;
-    border: 2px solid pink;
+    background-color: rgb(var(--block-color));
+    border: 4px solid rgb(var(--outline-color));
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+#contact_github>a, #contact_email>a{
+    text-decoration: none;
 }
 @media screen and (max-width: 800px) {
     .contact_bar {
@@ -482,37 +539,15 @@ body{
     cursor: pointer;
 }
 #full_view_background_black{
-    background-color: black !important;
-    border: 1px solid rgb(145, 0, 0);
+    background-color: black;
+    border: 1px solid rgb(135, 16, 16);
 }
 #full_view_background_white{
-    background-color: white !important;
-    border: 1px solid rgb(145, 0, 0);
+    background-color: white;
+    border: 1px solid rgb(197, 0, 0);
 }
 #full_view_background_gray{
-    background-color: rgb(130, 130, 130) !important;
-    border: 1px solid rgb(145, 0, 0);
-}
-
-h1 {
-    font-family: yumenikki;
-    font-size: clamp(3rem, 2.73rem + 1.09vw, 3.6rem);
-    font-variant: small-caps;
-}
-h2{
-	font-size: clamp(2.2rem, 2.1rem + 0.8vw, 2.5rem);
-}
-h3{
-    font-size: clamp(1.25rem, 1.14rem + 0.46vw, 1.5rem)
-}
-h4{
-    font-size: clamp(1.5rem, 1.36rem + 0.55vw, 1.8rem);
-}
-p {
-    font-size: clamp(0.83rem, 0.76rem + 0.33vw, 1rem);
-} 
-.text{
-   font-size: clamp(0.83rem, 0.76rem + 0.33vw, 1rem);
-   color: white; 
+    background-color: rgb(130, 130, 130);
+    border: 1px solid rgb(135, 16, 16);
 }
 
