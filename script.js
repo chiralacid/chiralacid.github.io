@@ -87,6 +87,78 @@ function zeroPlayed(selection)
     }
 }
 
+let clicks=0;
+
+function clickMe(){
+    console.log(clicks)
+    clicks++;
+    switch(clicks){
+        case 1:
+            document.getElementById("lancer_button").querySelector('p').innerHTML = "(click me again!)";
+            break;
+
+        case 2:
+            document.getElementById("lancer_button").querySelector('p').innerHTML = "(again!)";
+            break;
+
+        case 3:
+            document.getElementById("lancer_button").querySelector('p').innerHTML = "(another!)";
+            break;
+
+        case 4:
+            document.getElementById("lancer_button").querySelector('p').innerHTML = "(once more!)";
+            break;
+
+        case 5:
+            document.getElementById("lancer_button").querySelector('p').innerHTML = "(did you get them all?)";
+            break;
+
+        case 6:
+            document.getElementById("lancer_button").querySelector('p').innerHTML = "(okay maybe that's enough)";
+            break;
+
+        case 7:
+            document.getElementById("lancer_button").querySelector('p').innerHTML = "(try another day maybe?!)";
+            break;
+
+        case 8:
+            document.getElementById("lancer_button").querySelector('p').innerHTML = "(ok stop)";
+            break;
+
+        case 9:
+            document.getElementById("lancer_button").querySelector('p').innerHTML = "(i'm running out of space)";
+            break;
+
+        case 10:
+            document.getElementById("lancer_button").querySelector('p').innerHTML = "(shutdown in 3)";
+            break;
+
+        case 11:
+            document.getElementById("lancer_button").querySelector('p').innerHTML = "(2)";
+            break;
+
+        case 12:
+            document.getElementById("lancer_button").querySelector('p').innerHTML = "(1)";
+            break;
+
+        case 13:
+        case 14:
+        case 15:
+        case 16:
+            document.getElementById("lancer_button").querySelector('p').innerHTML = "(1)";
+            break;
+
+        case 17:
+            document.getElementById("lancer_button").querySelector('p').innerHTML = "(ok stop)";
+            break;
+
+        default:
+            document.getElementById("lancer_button").querySelector('p').innerHTML = "(...)";
+            break;
+    }
+    
+}
+
 function play(){
     let random = Math.floor(Math.random() * (Math.floor(100) - Math.ceil(0)) + Math.ceil(0));
 

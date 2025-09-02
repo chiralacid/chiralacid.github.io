@@ -222,7 +222,9 @@ body{
     background-color: rgba(85, 134, 189, 0.60);
     cursor: pointer;
 }
-
+#lancer_button>p{
+    color: black;
+}
 #lancer_sprite, #snake, #nightmare{
     position: absolute;
     display: none;
