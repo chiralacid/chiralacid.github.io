@@ -223,6 +223,7 @@ body{
     cursor: pointer;
 }
 #lancer_button>p{
+    font-size: clamp(0.35rem, 0.2rem + 0.8vw, 1rem);
     color: black;
 }
 #lancer_sprite, #snake, #nightmare{
