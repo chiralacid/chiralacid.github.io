@@ -350,6 +350,10 @@ body{
     width: clamp(200px, 27vw, 600px);
     height: clamp(200px, 20vw, 600px);
 }
+#cat_button{
+    cursor: pointer;
+    text-decoration: underline;
+}
 #model_zoom_button{
     width: 50%;
     height: auto;         

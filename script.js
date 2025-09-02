@@ -90,7 +90,6 @@ function zeroPlayed(selection)
 let clicks=0;
 
 function clickMe(){
-    console.log(clicks)
     clicks++;
     switch(clicks){
         case 1:
@@ -463,8 +462,7 @@ function changePageBackground(){
 function randomCat(){
     let random = Math.floor(Math.random() * (Math.floor(13) - Math.ceil(1)) + Math.ceil(1));
 
-    switch(random)
-    {
+    switch(random){
         case 1:
             return document.getElementById('cat_button').setAttribute('href',"resources/images/cats/angry_cat.png");
         
