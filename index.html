@@ -93,6 +93,76 @@
                 </div> 
 
                 <div>
+                    <video class="autopause" controls src="resources/video/neural_network_demo.mp4"></video>
+                    <h3>Digit Recognition Neural Network</h3>
+                    <p>Programmed in Python, utilizing Pytorch for the training model, this program trains a 
+                        convolutional neural network to predict handwritten digits. I created the model as a study 
+                        to help understand parts of a neural network and how training data affects the model's performance. 
+                        
+                        <br><br>The model consists of: 
+                        two convolution layers to convert the input to feature maps. Two activation layers using ReLu 
+                        and max pooling to break linearity and reduce spatial size. Two intermediate linear layers to 
+                        flatten features for the next layer, and a final flatten layer for the output (view). I also 
+                        added a dropout layer to reduce overfitting.
+
+                        <br><br><a target="_blank" rel="noopener noreferrer" href="https://github.com/chiralacid/digit_recognition_cnn">Source code</a>
+                    </p> 
+                </div>   
+
+                <div>
+                     <div class="slideshow_container">
+                        <div class="slides2">
+                        <div class="numbertext">1 / 4</div>
+                        <model-viewer id="bracket_model" camera-controls touch-action="pan-y" 
+                        auto-rotate rotation-per-second="0.4rad" 
+                        src="resources/3d_objects/demon_bracket.glb" 
+                        skybox-image="resources/backgrounds/cloudy_puresky_4k.jpg"
+                        alt="The_bracket_used_for_the_soccerbot" 
+                        shadow-intensity="1"></model-viewer>
+                        <button id="model_zoom_button" onclick="zoomModel(document.getElementById('bracket_model'))">
+                            click for fullscreen model</button>
+                        </div>  
+                        
+                        <div class="slides2">
+                        <div class="numbertext">2 / 4</div>
+                        <img onclick="fullView(this)" src="resources/images/technical_projects_images/soccerbot/soccerbot1.jpg" 
+                            alt="soccerbot1">
+                        </div>
+
+                        <div class="slides2">
+                        <div class="numbertext">3 / 4</div>
+                        <img onclick="fullView(this)" src="resources/images/technical_projects_images/soccerbot/soccerbot2.jpg" 
+                            alt="soccerbot2">
+                        </div>
+
+                        <div class="slides2">
+                        <div class="numbertext">4 / 4</div>
+                        <img onclick="fullView(this)" src="resources/images/technical_projects_images/soccerbot/soccerbot3.jpg" 
+                            alt="soccerbot3">
+                        </div>
+
+                        <a class="prev" onclick="plusSlides(-1, 2)">❮</a>
+                        <a class="next" onclick="plusSlides(1, 2)">❯</a>
+                    </div>
+                    
+                    <h3>SoccerBot</h3>
+                    
+                    <p>Developed a soccer bot for a competition. I assembled the bot with a kit, wired it, and created
+                        a bracket model for it (as seen in slide 1). 
+                                            
+                        <br><br>Using pre-existing source code, I made macro buttons for the bot to spin faster, utilizing
+                        the back to hit the ball. The bracket design on the front (golden) was designed in
+                        OnShape while the back bracket (green) was improvised to due printing issues. 
+
+                        <br><br>(note: hold shift+drag to change the model origin)
+                        
+                       <br><br><a target="_blank" rel="noopener noreferrer" href="resources/code/arduino_code_new/arduino_code_new.txt">Source Code</a>
+
+                    </p> 
+                </div>
+
+
+                <div>
                     <div class="slideshow_container">
                         <div class="slides8">
                         <div class="numbertext">1 / 3</div>
@@ -128,7 +198,8 @@
                         <br><a target="_blank" rel="noopener noreferrer"
                             href="documents/bookstore_report.pdf">Project report</a>
                     </p> 
-                </div> 
+                </div>
+
 
                 <div>
                     <div class="slideshow_container">
@@ -189,6 +260,8 @@
                     </p> 
                 </div> 
 
+
+
                 <div>
                     <video class="autopause" controls src="resources/video/AI_Battlez_Demo.mp4"></video>
                     <h3>USER vs AI Fighting Game</h3>
@@ -203,9 +276,8 @@
 
                         <br><br><a target="_blank" rel="noopener noreferrer" href="https://github.com/chiralacid/battlez_">Source code</a>
                     </p> 
-
-                    
                 </div>  
+
 
                 <div>
                     <img onclick="fullView(this)" src="resources/images/website_first_image.png" alt="cat">
@@ -226,57 +298,7 @@
                     </p> 
                 </div> 
 
-                <div>
-                     <div class="slideshow_container">
-                        <div class="slides2">
-                        <div class="numbertext">1 / 4</div>
-                        <model-viewer id="bracket_model" camera-controls touch-action="pan-y" 
-                        auto-rotate rotation-per-second="0.4rad" 
-                        src="resources/3d_objects/demon_bracket.glb" 
-                        skybox-image="resources/backgrounds/cloudy_puresky_4k.jpg"
-                        alt="The_bracket_used_for_the_soccerbot" 
-                        shadow-intensity="1"></model-viewer>
-                        <button id="model_zoom_button" onclick="zoomModel(document.getElementById('bracket_model'))">
-                            click for fullscreen model</button>
-                        </div>  
-                        
-                        <div class="slides2">
-                        <div class="numbertext">2 / 4</div>
-                        <img onclick="fullView(this)" src="resources/images/technical_projects_images/soccerbot/soccerbot1.jpg" 
-                            alt="soccerbot1">
-                        </div>
-
-                        <div class="slides2">
-                        <div class="numbertext">3 / 4</div>
-                        <img onclick="fullView(this)" src="resources/images/technical_projects_images/soccerbot/soccerbot2.jpg" 
-                            alt="soccerbot2">
-                        </div>
-
-                        <div class="slides2">
-                        <div class="numbertext">4 / 4</div>
-                        <img onclick="fullView(this)" src="resources/images/technical_projects_images/soccerbot/soccerbot3.jpg" 
-                            alt="soccerbot3">
-                        </div>
-
-                        <a class="prev" onclick="plusSlides(-1, 2)">❮</a>
-                        <a class="next" onclick="plusSlides(1, 2)">❯</a>
-                    </div>
-                    
-                    <h3>SoccerBot</h3>
-                    
-                    <p>Developed a soccer bot for a competition. I assembled the bot with a kit, wired it, and created
-                        a bracket model for it (as seen in slide 1). 
-                                            
-                        <br><br>Using pre-existing source code, I made macro buttons for the bot to spin faster, utilizing
-                        the back to hit the ball. The bracket design on the front (golden) was designed in
-                        OnShape while the back bracket (green) was improvised to due printing issues. 
-
-                        <br><br>(note: hold shift+drag to change the model origin)
-                        
-                       <br><br><a target="_blank" rel="noopener noreferrer" href="resources/code/arduino_code_new/arduino_code_new.txt">Source Code</a>
-
-                    </p> 
-                </div> 
+                 
             </div>
         </div>
 
@@ -551,7 +573,7 @@
         </header>
         <div class="contact_bar">
             <div id="contact_email">
-                <a a href="mailto:asadzbv@gmail.com">
+                <a a href="mailto:a10bhatti@torontomu.ca">
                     <svg xmlns="http://www.w3.org/2000/svg" height="98px" viewBox="0 -960 960 960" width="98px" fill="#e3e3e3"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/>
                     </svg>
                     <p>asadzbv@gmail.com</p>  
