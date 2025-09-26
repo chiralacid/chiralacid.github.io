@@ -138,6 +138,11 @@ body{
     display: none;
 }
 @media screen and (max-width: 800px) {
+
+    body{
+        background-position: 50%;
+    }
+
     #close_sidebar_button{
         display: block;
     }
