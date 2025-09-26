@@ -60,7 +60,7 @@
                 <img id="snake" src="resources/icons/venom_snake_face.jpg">
                 <img id="doakes" src="resources/icons/bay_harbour_butcher.jpg">
 
-                <button id="lancer_button" onclick="play(); clickMe();">WELCOME!<br><p>(click me)</p></button>
+                <button id="lancer_button" onclick="playButtonAudio(); clickMe();">WELCOME!<br><p>(click me)</p></button>
             </div> 
         </header>
 
@@ -77,13 +77,14 @@
                 <div>
                     <img onclick="fullView(this)" src="resources/images/technical_projects_images/alu_schematic.png" alt="alu_schematic">
                     <h3>Arithmetic Logic Unit<b></b></h3>
-                    <p>This program was created in VHDL and implemented into an FPGA board.
+                    <p>Created in VHDL and implemented into an FPGA board.
                         The user is inputs two 8-bit binary numbers, updated with the clock during operation. 
-                        The ALU performs 1 of 8 operations based on a given decoded states from the fsm.
+                        The ALU performs 1 of 8 operations based on a given decoded states from an fsm and 
+                        the input from the registers.
 
-                        <br><br>The input, signed output, student number (fsm code) is 
-                        displayed on board's sseg displays. For debugging, the actual state resulting from the 
-                        fsm is display on LEDs.
+                        <br><br>The input, signed output, fsm code is 
+                        displayed on the sseg displays. For debugging, the actual states from the 
+                        fsm are displayed on the LEDs.
                         
                         <br><br><a target="_blank" rel="noopener noreferrer" 
                             href="https://github.com/chiralacid/arithmetic_logic_unit">Source code</a>
@@ -95,13 +96,13 @@
                 <div>
                     <video class="autopause" controls src="resources/video/neural_network_demo.mp4"></video>
                     <h3>Digit Recognition Neural Network</h3>
-                    <p>Programmed in Python, utilizing Pytorch for the training model, this program trains a 
-                        convolutional neural network to predict handwritten digits. I created the model as a study 
-                        to help understand parts of a neural network and how training data affects the model's performance. 
+                    <p>Programmed in Python using Pytorch, it trains a convolutional neural network to predict 
+                        handwritten digits. The model was a study to understand parts of a neural network and 
+                        the effect of training data on the performance. 
                         
-                        <br><br>The model consists of two layers for: 
-                        convolution, activation (using ReLu/max pooling), and intermediate linear layers to 
-                        flatten features. I also added a dropout layer to reduce overfitting.
+                        <br><br>It achieved >90% accuracy trained on the 
+                        MNIST database. My conclusion was that it can be further improved by
+                        manipulating digit thickness since MNIST relies on a thickness to predict more accurately.
 
                         <br><br><a target="_blank" rel="noopener noreferrer" href="https://github.com/chiralacid/digit_recognition_cnn">Source code</a>
                     </p> 
@@ -145,12 +146,11 @@
                     
                     <h3>SoccerBot</h3>
                     
-                    <p>Developed a soccer bot for a competition. I assembled the bot with a kit, wired it, and created
-                        a bracket model for it (as seen in slide 1). 
+                    <p>Created a soccer bot for a competition. I assembled the bot, wired/soldered it, and then created
+                        a bracket model (slide 1) to be 3D printed for the front. The bot was programmed using an Arduino Nano.
                                             
-                        <br><br>I made macro buttons for the bot to spin faster, utilizing
-                        the back to hit the ball. The bracket design on the front (golden) was designed in
-                        OnShape while the back bracket (green) was improvised to due printing issues. 
+                        <br><br> The golden bracket was designed in OnShape while the green bracket was improvised on the 
+                        go to due printing issues. 
 
                         <br><br>(note: hold shift+drag to change the model origin)
                         
@@ -184,12 +184,12 @@
                     </div>
                     
                     <h3>BookStore Application</h3>
-                    <p>I led team of 3 for this application, utilizing Github for collaboration. The 
-                        application was coded in Java and JavaFX for the GUI. The program was developed using 
-                        UML/use-case diagrams and constructed following the State Design Pattern.
-                        
-                        <br><br>An interactive book store application with GUI. It follows requirements given by the 
+                    <p>An interactive book store application with GUI. It follows requirements given by the 
                         client such as an admin menu, points program, a checkout for the customer.
+                        
+                        <br><br>I led team of 3 for this project, using Github for collaboration. The 
+                        application was coded in Java and JavaFX for the GUI. The program was structured using 
+                        UML/use-case diagrams and constructed following the State Design Pattern.
 
                         <br><br><a target="_blank" rel="noopener noreferrer"
                             href="https://github.com/chiralacid/bookstore_app">Source code</a>
@@ -242,13 +242,12 @@
                     </div>
 
                     <h3>Data Processing Program</h3>
-                    <p>This program was create in C and utilized GNUPlot to create the graphs. 
-                        Each graph used a different data files provided by the program to visualize specific
-                        data collected such as Average Land Temperatures within a certain time period.
+                    <p>I made this program in C and used GNUPlot to create the graphs. 
+                        The graphs use a extracted data from the program to visualize data 
+                        such as Average Land Temperatures over different centuries.
                         
-                        <br><br>The program analyzes data for global temperature of land and oceans. It isolates the data 
-                        into categories, performs operations to identify trends, then extracted the results into 
-                        new files. 
+                        <br><br>The program first analyzes data for global temperature of land and oceans. It then breaks the data 
+                        into categories, performs operations to identify trends, then exports the results into .csv data files. 
 
                         <br><br><a target="_blank" rel="noopener noreferrer"
                             href="https://github.com/chiralacid/data_processing_program">Source code</a>
@@ -264,13 +263,13 @@
                     <video class="autopause" controls src="resources/video/AI_Battlez_Demo.mp4"></video>
                     <h3>PVE Fighting Game</h3>
                     <p>A text-only fighting game made in Java. 4 characters can be chosen to face off against a computer. 
-                        The player can Attack with chance of a critical (extra damage), Defend 
-                        with a chance of parrying (reflects damage), or use an Ultimate (>3 criticals).
+                        There are 3 options: Attack with chance of a critical (1.3x damage), Defend 
+                        with chance of reflecting damage, or use an Ultimate if >3 criticals. 
 
-                        <br><br>The computer plays based on a risk reward weighting system. It
+                        <br><br>The computer plays based on a simple risk-reward system. It
                         may change strategies if it's not working out by zeroing or go all out when it
                         has nothing to lose. It also adjusts it's playstyle based on the characters 
-                        such as Spongebob (high-risk high-reward).
+                        such as Spongebob.
 
                         <br><br><a target="_blank" rel="noopener noreferrer" href="https://github.com/chiralacid/battlez_">Source code</a>
                     </p> 
@@ -280,20 +279,28 @@
                 <div>
                     <img onclick="fullView(this)" src="resources/images/website_first_image.png" alt="cat">
                     <h3>WEBSITE</h3>
-                    <p>A website I created from scratch using HTML, CSS, and JavaScript to outline projects
-                        I have enjoyed doing. I created a Github repository to both host my website and push any updates.
-                        The photo above is how the website initially looked (August 4th, 2025). You can see all the commits
-                        I have done since then through the Github repository.
-                        
-                        <br><br>Using Visual Studio Code (VSC) with the Live Server plugin, I have a live view 
-                        of the website. I used this to create adaptive website features for both mobile and 
-                        desktop. <br>Click the button ->
-                        <button id="click" onclick="changePageBackground()"></button>
+                    <p>Created from scratch with HTML, CSS and JavaScript.
+                        The photo is how it looked when I started. See the mobile version!</p>
 
+                    <div id="click_container">
+                        <audio id="yume_nikki_theme" preload="none" 
+                            src="resources/audio/Yume_Nikki_OST_The Snowy World.m4a"></audio>
+                        <button onclick="changePageBackground()">
+                        <div id="click_text">CLICK ME FOR ORIGINAL!!<br><br>[YUMENIKKI THEMED]</div></button>
+                    </div>
+                    <p>
                     <br><br><a href="https://chiralacid.github.io/">Website Link</a>
                     <br><a target="_blank" rel="noopener noreferrer" href="https://github.com/chiralacid/chiralacid.github.io">Source Code</a>
                     <br><a id="cat_button" target="_blank" rel="noopener noreferrer" onclick="randomCat()">Random Cat Link</a>
                     </p> 
+                </div> 
+
+                <div>
+                    <h3>UPCOMING/UNPOSTED PROJECTS</h3>
+                        <h4>Python Autoscripts</h4>
+                        <p>Created some simple autoscripts in Python for various games I play. I made an autoclicker, 
+                            a randomized anti-afk movement script, and a fish-farming script for Minecraft.
+                        </p>
                 </div> 
 
                  
@@ -308,7 +315,8 @@
                     <div class="slideshow_container">
                         <div class="slides4">
                         <div class="numbertext">1 / 2</div>
-                        <video class="autopause" controls src="resources/video/The_Elevator.mp4" alt="The_Elevator"></video>
+                        <video class="autopause" controls src="resources/video/The_Elevator.mp4" alt="The_Elevator"
+                            onclick="isVideoPlaying(1)"></video>
                         </p> 
                         </div>
 
@@ -509,8 +517,7 @@
                     </div>
                     <h3>Business Cards</h3>
                     <p>Business cards for a character named Jotaro Kujo, created in Adobe Photoshop. I came up with 3 different designs. 
-                        My personal favorite is the slide 1 design as it shows a badge Jotaro wears as opposed to himself, making it easier 
-                        to associated him with something.
+                        My personal favorite is the slide 1 design.
 
                         <br><br>Each card is representative of Jotaro Kujo's attire or personality. I added some mini easter eggs
                         into the designs such as the "oceanman.com", referring Ocean Man by Ween, commonly associated to him. 
@@ -551,14 +558,19 @@
             <div class="about_container">
                 <div class="about_content_bar">
                 <div class="about_content">Hello, my name is Asad. I'm a third year Computer Engineering 
-                student at Toronto Metropolitan University (formerly Ryerson). I'm a resourceful and
-                determined learner, I enjoy different challenges that help me grow my skills. This has help
-                me developed a wide variety of interests from technical stuff like programming to 
-                live-action media projects. I created this website to challenge myself with something new 
-                but also showcase projects I've enjoyed.
-                <br><br>
-                If you wish to see my live-action projects that I am unable to share here, please contact me 
-                with the email below. Thank you for visiting my website!
+                student at Toronto Metropolitan University (formerly Ryerson). I created this website to 
+                showcase my projects. I enjoy doing hardware related projects since they test 
+                me the most and force improvement. An example of this was my ALU project where I 
+                spent about 21 hours fixing a problem with the clock causing inaccuracies. The clock between 
+                would come out of sync between units after 2 or 3 operations. Persevering through it
+                allowed me to learn a lot more than I would've normally. Regardless of whether a project is
+                interesting to me or not, I always find something to appreciate in it.
+
+                <br><br> I enjoy many things outside of hardware engineering and programming like: 
+                chemistry, astronomy, media production, motorcycles, and videos games just to name a few. 
+                The current game I'm playing is Deltarune which is the first indie type RPG I've played, it's
+                a fun game if you want to test your patience.
+                 
                 </div>
                 </div>
             </div>

@@ -158,7 +158,7 @@ function clickMe(){
     
 }
 
-function play(){
+function playButtonAudio(){
     let random = Math.floor(Math.random() * (Math.floor(100) - Math.ceil(0)) + Math.ceil(0));
 
     let audioPlayer;
@@ -221,7 +221,7 @@ function play(){
 
     //rerolls audio if nothing will play
     if (audioPlayer==null)
-        play();
+        playButtonAudio();
         
     if (img!=null)
     {
@@ -303,6 +303,21 @@ function loadButtonAudio(){
     }
 }
 
+
+
+
+Object.defineProperty(HTMLMediaElement.prototype, 'playing', {
+    get: function(){
+        return !!(this.currentTime > 0 && !this.paused && !this.ended && this.readyState > 2);
+    }
+})
+
+var videoPlaying=0;
+
+function isVideoPlaying(video){
+    return video.playing
+}
+
 //stop audio/video out of view
 document.addEventListener("DOMContentLoaded", () => {
     const videos = document.querySelectorAll("video.autopause");
@@ -314,6 +329,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { threshold: 0.25 });//60% of video not visible
 
     videos.forEach(video => {
+        if (isVideoPlaying(video))
+            videoPlaying=1;
 
         observer.observe(video);
 
@@ -323,15 +340,21 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (v !== video && !v.paused) {
                     v.dataset.userPaused = "true";
                     v.pause();
+                    videoPlaying=0;
                 }
             });
             video.dataset.userPaused = "";
+            videoPlaying=1;
         });
 
-        // clear auto-pause for manual pauses
+        //clear auto-pause for manual pauses
         video.addEventListener("pause", () => {
             if (!video.dataset.userPaused) {
                 video.dataset.userPaused = "true";
+            }
+
+            if (Array.from(videos).every(v => v.paused)) {
+                videoPlaying = 0;
             }
         });
     }); 
@@ -352,9 +375,9 @@ function closeFullView(){
 
 function zoomModel(modelSrc) {
     let fullModel = document.getElementById("full_model");
-    // Set the 3D model source from the thumbnail
+    //set the 3D model source from the thumbnail
     fullModel.src = modelSrc.src; 
-    // Show the fullscreen overlay
+    //show the fullscreen overlay
     document.getElementById("full_view_model").style.display = "block";
 }
 function closeFullViewModel(){
@@ -434,14 +457,13 @@ function invert(rgb) {
 let pickBg=0;
 
 function changePageBackground(){
+    playYumeNikkiTheme();
     if (pickBg==0)
     {
         document.body.style.backgroundImage="url('resources/backgrounds/yume_nikki.png')";
- 
-
         allElements = document.querySelectorAll('*');
         allElements.forEach(element => {
-        element.style.fontFamily = 'yumenikki'; 
+            element.style.fontFamily = 'yumenikki'; 
         });
         pickBg=1;
     }
@@ -457,6 +479,31 @@ function changePageBackground(){
     }
 }
 
+const yumeNikkiThemeAudio = document.getElementById("yume_nikki_theme");
+
+function playYumeNikkiTheme(){
+    if(pickBg==0)
+    {
+        yumeNikkiThemeAudio.load();
+        yumeNikkiThemeAudio.play();
+    }
+    else
+    {
+        yumeNikkiThemeAudio.pause();
+        yumeNikkiThemeAudio.currentTime=0;
+        yumeNikkiThemeAudio.isTransitioning = false;
+    }   
+    yumeNikkiThemeAudio.volume = videoPlaying === 0 ? 0.7 : 0.2; 
+}
+yumeNikkiThemeAudio.addEventListener("play", () => {
+
+    //initial volume
+    yumeNikkiThemeAudio.volume = videoPlaying === 0 ? 0.7 : 0.2; 
+
+    yumeNikkiThemeAudio.addEventListener("timeupdate", () => {
+        yumeNikkiThemeAudio.volume = videoPlaying === 0 ? 0.7 : 0.2;     
+    });
+});
 
 //random cat scripts
 function randomCat(){

@@ -25,7 +25,7 @@ h3, .about_content{
     font-variant: small-caps;
 }
 h4{
-    font-size: clamp(1.5rem, 1.36rem + 0.55vw, 1.8rem);
+    font-size: clamp(1.1rem, 1.0rem + 0.4vw, 1.4rem);
 }
 p {
     font-size: clamp(0.75rem, 1rem + 0.2vw, 1.2rem);
@@ -304,6 +304,15 @@ body{
     text-align: center;
     margin-bottom: 1vh;
 }
+.projects_container h4{
+    text-align: left;
+    margin-bottom: 1vh;
+}
+.projects_container ul{
+    text-align: center;
+    margin-bottom: 1vh;
+    color: white;
+}
 #projects_box{
     display: grid;
     grid-template-columns: repeat(1, minmax(200px,1fr));
@@ -357,6 +366,7 @@ body{
 }
 #model_zoom_button{
     width: 50%;
+    padding: 1vh;
     height: auto;         
     min-height: clamp(1.5rem, 1.4rem + 0.6vw, 1.875rem);
     margin-bottom: 1vh;
@@ -367,12 +377,26 @@ body{
     color: white;
     overflow: auto;
 }
-#click {
-    width: clamp(0.83rem, 0.99rem + 0.6vw, 2rem);
-    height: clamp(0.90rem, 0.99rem + 0.6vw, 2rem);
+#click_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2vh;
+}
+#click_container>button{
+    padding: 1em;
+    height: clamp(150px, 10vw + 50px, 300px);
+    width: clamp(150px, 10vw + 50px, 300px);
     background-color: black;
     border: 1.5px solid rgb(var(--outline-color-alt));
     cursor: pointer;
+    text-align: center;
+    color: rgb(var(--secondary-color));
+}
+#click_text{
+    text-align: center;
+    color: rgb(var(--secondary-color));
+    font-size: clamp(12px, 4vw, 20px);
 }
 
 .about_container {
