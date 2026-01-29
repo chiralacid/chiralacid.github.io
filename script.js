@@ -77,7 +77,7 @@ function loadSlides(){
 
 //lancer button audio code
 
-let played = [0,0,0,0,0];
+let played = [0,0,0,0];
 
 function zeroPlayed(selection)
 {
@@ -87,77 +87,6 @@ function zeroPlayed(selection)
     }
 }
 
-let clicks=0;
-
-function clickMe(){
-    clicks++;
-    switch(clicks){
-        case 1:
-            document.getElementById("lancer_button").querySelector('p').innerHTML = "(click me again!)";
-            break;
-
-        case 2:
-            document.getElementById("lancer_button").querySelector('p').innerHTML = "(again!)";
-            break;
-
-        case 3:
-            document.getElementById("lancer_button").querySelector('p').innerHTML = "(another!)";
-            break;
-
-        case 4:
-            document.getElementById("lancer_button").querySelector('p').innerHTML = "(once more!)";
-            break;
-
-        case 5:
-            document.getElementById("lancer_button").querySelector('p').innerHTML = "(did you get them all?)";
-            break;
-
-        case 6:
-            document.getElementById("lancer_button").querySelector('p').innerHTML = "(okay maybe that's enough)";
-            break;
-
-        case 7:
-            document.getElementById("lancer_button").querySelector('p').innerHTML = "(try another day maybe?!)";
-            break;
-
-        case 8:
-            document.getElementById("lancer_button").querySelector('p').innerHTML = "(ok stop)";
-            break;
-
-        case 9:
-            document.getElementById("lancer_button").querySelector('p').innerHTML = "(i'm running out of space)";
-            break;
-
-        case 10:
-            document.getElementById("lancer_button").querySelector('p').innerHTML = "(shutdown in 3)";
-            break;
-
-        case 11:
-            document.getElementById("lancer_button").querySelector('p').innerHTML = "(2)";
-            break;
-
-        case 12:
-            document.getElementById("lancer_button").querySelector('p').innerHTML = "(1)";
-            break;
-
-        case 13:
-        case 14:
-        case 15:
-        case 16:
-            document.getElementById("lancer_button").querySelector('p').innerHTML = "(1)";
-            break;
-
-        case 17:
-            document.getElementById("lancer_button").querySelector('p').innerHTML = "(ok stop)";
-            break;
-
-        default:
-            document.getElementById("lancer_button").querySelector('p').innerHTML = "(...)";
-            break;
-    }
-    
-}
-
 function playButtonAudio(){
     let random = Math.floor(Math.random() * (Math.floor(100) - Math.ceil(0)) + Math.ceil(0));
 
@@ -165,7 +94,7 @@ function playButtonAudio(){
     let img; 
 
     // hide all images
-    document.querySelectorAll("#lancer_sprite, #snake, #nightmare, #doakes")
+    document.querySelectorAll("#lancer_sprite, #doakes")
     .forEach(el => {
         el.style.display = "none";
         el.classList.remove("fade");
@@ -180,22 +109,21 @@ function playButtonAudio(){
         played[0]=1;
         zeroPlayed(0)
     }
-    else if (random>=10 && random < 20 && played[1]!=1)
+    else if (random>=10 && random<=100)
     {
-        audioPlayer = document.getElementById('mgs_alert');
-        img=document.getElementById('snake');
-        played[1]=1;
-        zeroPlayed(1)
-    }
-    else if (random>=20 && random<95)
-    {
-        if (random>=20 && random<45 && played[2]!=1)
+        if (random>=20 && random<50 && played[1]!=1)
         {
             audioPlayer = document.getElementById('dd_tone');
+            played[1]=1;
+            zeroPlayed(1)
+        }
+        else if (random>=50 && random <90 && played[2]!=1)
+        {
+            audioPlayer = document.getElementById('pcrp_tone');
             played[2]=1;
             zeroPlayed(2)
         }
-        else if (random>=45 && random <70 && played[3]!=1)
+        else if (random>=90 && played[3]!=1)
         {
             audioPlayer = document.getElementById('dexter_piano');
             img=document.getElementById('doakes');
@@ -203,21 +131,8 @@ function playButtonAudio(){
             played[3]=1;
             zeroPlayed(3)
         }
-        else if (random>=70 && played[4]!=1)
-        {
-            audioPlayer = document.getElementById('pcrp_tone');
-            played[4]=1;
-            zeroPlayed(4)
-        }
             
     } 
-    else if (random>=95 && played[5]!=1)
-    {
-        audioPlayer = document.getElementById('fnaf_ani_door');
-        img=document.getElementById('nightmare');
-        played[5]=1;
-        zeroPlayed(5)
-    }
 
     //rerolls audio if nothing will play
     if (audioPlayer==null)
@@ -242,7 +157,6 @@ function showImg(img, duration)
 {
     img.classList.remove('fade');
     img.style.display = 'block';
-    
     timer(img, duration);
 }
 
@@ -275,21 +189,10 @@ function timer(img, duration){
     {
         img.classList.remove('fade');
         img.style.transition='opacity 100ms';
-        
-        if (img.id==='nightmare')
-            img.style.zIndex='1000';
-            
+                   
         setTimeout(function(){ 
             img.style.transition='opacity '+duration*1000+'ms';
             img.classList.add('fade');
-            
-            if (img.id==='nightmare')
-            {
-                img.style.zIndex='0';
-                img.style.transition='opacity '+duration*200+'ms';
-            }
-                
-
         }, duration*1000);
     }
 }

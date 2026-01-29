@@ -395,8 +395,8 @@ body{
 }
 #click_container>button{
     padding: 1em;
-    height: clamp(150px, 10vw + 50px, 300px);
-    width: clamp(150px, 10vw + 50px, 300px);
+    height: clamp(109px, 7.3vw + 36px, 219px);
+    width: clamp(121.5px, 8.1vw + 40.5px, 243px);
     background-color: black;
     border: 1.5px solid rgb(var(--outline-color-alt));
     cursor: pointer;
