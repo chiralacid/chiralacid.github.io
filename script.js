@@ -293,6 +293,12 @@ function closeFullViewModel(){
 function changeFullViewBackground(color){
     document.getElementById("full_view_image").style.backgroundColor=color;
 
+    //color hotfix 
+    if (color=='rgba(255, 255, 255, 0.7)')
+        document.getElementById("bg_color").style.color="rgb(0,0,0)";
+    else
+        document.getElementById("bg_color").style.color="rgb(255, 255, 255)";
+
     document.documentElement.style.setProperty('--close_button_color_full_img_view', invert(color));
     document.documentElement.style.setProperty
         ('--close_button_color_hover_focus_full_img_view', alterColor(invert(color)));
@@ -334,7 +340,6 @@ function invert(rgb) {
     rgbSave=[rgb[0],rgb[1],rgb[2]];
 
     for (var i = 0; i < rgb.length; i++) rgb[i] = (i === 3 ? 1 : 255) - rgb[i];
-
     //if gray, then change to white or black completely
     if (( rgb[0]==rgb[1] && rgb[1]==rgb[2] ) && ( rgb[0]!=0 && rgb[0]!=255 ) )
     {
